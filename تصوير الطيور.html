@@ -1,0 +1,2779 @@
+
+                <!DOCTYPE html>
+                <html lang="en">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>المزيد عن تصوير الطيور</title>
+                    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet">
+                    <style>
+                        .lightbox {
+                            display: none;
+                            position: fixed;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            background: rgba(0, 0, 0, 0.8);
+                            z-index: 1000;
+                            justify-content: center;
+                            align-items: center;
+                        }
+                        .lightbox.show {
+                            display: flex;
+                        }
+                        .lightbox img {
+                            max-width: 90%;
+                            max-height: 90%;
+                            object-fit: contain;
+                        }
+                        .lightbox .close-btn {
+                            position: absolute;
+                            top: 20px;
+                            right: 20px;
+                            background: rgba(255, 255, 255, 0.8);
+                            color: #000;
+                            border: none;
+                            font-size: 24px;
+                            cursor: pointer;
+                            border-radius: 50%;
+                            width: 30px;
+                            height: 30px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                        }
+                        .lightbox .close-btn:hover {
+                            background: rgba(255, 255, 255, 1);
+                        }
+                    </style>
+                </head>
+                <body>
+            <div class="pdf-conversation">
+                <style>
+    html, body {
+        background: #fff !important;
+        color: #222;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        line-height: 1.7;
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+    }
+    body {
+        max-width: 980px;
+        margin: 0 auto;
+    }
+    hr {
+        border-color: #e0e0e0;
+        margin-top: 2em;
+        margin-bottom: 2em;
+    }
+    .pdf-conversation {
+        padding: 32px 36px;
+        background: #fff;
+    }
+    .header {
+        text-align: center;
+        margin-bottom: 48px;
+        padding-bottom: 18px;
+        border-bottom: 1px solid #e0e0e0;
+    }
+    .header h1 {
+        font-size: 2.1rem;
+        font-weight: 700;
+        color: #222;
+        margin: 0;
+    }
+    .header h3 {
+        color: #666;
+        font-size: 1.1rem;
+        font-weight: 400;
+        margin: 0 0 0.5em 0;
+    }
+    .header p {
+        color: #888;
+        font-size: 0.98rem;
+        margin: 0;
+    }
+    .header small {
+        color: #888;
+    }
+    .header a {
+        color: #888;
+    }
+    .header a:hover {
+        color: #2563eb;
+    }
+    .message {
+        margin-bottom: 26px;
+        /* display: flex; gap: 14px; */
+        display: block;
+        clear: both;
+        overflow: hidden;
+        padding-bottom: 2px;
+    }
+    .message.right .message-avatar {
+        float: right;
+        margin-left: 12px;
+        margin-right: 0;
+    }
+    .message.left .message-avatar {
+        float: left;
+        margin-right: 12px;
+        margin-left: 0;
+    }
+    .message-avatar {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: #60a5fa;
+        color: #fff;
+        font-weight: bold;
+        font-size: 15px;
+        display: inline-block;
+        text-align: center;
+        line-height: 36px;
+        vertical-align: top;
+        flex-shrink: 0;
+    }
+    .message.left .message-avatar {
+        background: #10b981;
+    }
+    .message-content {
+        max-width: 78%;
+        padding: 12px 16px;
+        border-radius: 12px;
+        position: relative;
+        font-size: 1.08rem;
+        word-break: break-word;
+        border: 1px solid #e0e0e0;
+        background: #f8fafc;
+        color: #222;
+        display: inline-block;
+        vertical-align: top;
+    }
+    .message.right .message-content {
+        background: #e3f0fd;
+        float: right;
+    }
+    .message.left .message-content {
+        float: left;
+        background: #f8fafc;
+    }
+    .message-time {
+        font-size: 12px;
+        opacity: 0.7;
+        margin-top: 10px;
+        color: #888;
+        clear: both;
+    }
+    .message.right .message-time {
+        text-align: right;
+    }
+    .message-image {
+        max-width: 384px;
+        max-height: 256px;
+        border-radius: 8px;
+        margin: 10px 0;
+        background: #f3f4f6;
+        border: 1px solid #e0e0e0;
+        display: block;
+        transition: all 0.2s;
+        cursor: pointer;
+    }
+    .message-image:hover {
+        filter: brightness(0.95);
+    }
+    .export-info {
+        font-size: 13px;
+        color: #888;
+        margin-top: 28px;
+        text-align: center;
+        padding-top: 14px;
+        border-top: 1px solid #e0e0e0;
+    }
+    pre {
+        background: #f3f4f6;
+        color: #222;
+        padding: 12px;
+        border-radius: 6px;
+        overflow-x: auto;
+        font-size: 0.95em;
+        margin: 10px 0;
+    }
+    code {
+        background: #f3f4f6;
+        color: #d97706;
+        padding: 2px 7px;
+        border-radius: 4px;
+        font-size: 0.95em;
+    }
+    pre code {
+        background: #f3f4f6;
+    }
+    a {
+        color: #2563eb;
+        text-decoration: underline;
+    }
+    /* --------- Table Styles --------- */
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        margin: 16px 0;
+        font-size: 0.98em;
+        background: #fff;
+        color: #222;
+    }
+    thead {
+        border-bottom: 1px solid #e0e0e0;
+    }
+    th, td {
+        padding: 7px 12px;
+        text-align: left;
+        font-size: 0.98em;
+        border: 1px solid #e0e0e0;
+    }
+    th {
+        font-weight: 600;
+        background: #f3f4f6;
+    }
+    tr:nth-child(even) {
+        background: #f8fafc;
+    }
+    /* --------- End Table Styles --------- */
+    @media (max-width: 900px) {
+        body {
+            max-width: 100vw;
+            padding: 0;
+        }
+        .pdf-conversation {
+            padding: 14px 2vw;
+        }
+    }
+    @media (max-width: 600px) {
+        .pdf-conversation {
+            padding: 6px 0.5vw;
+        }
+        .message-content {
+            max-width: 98vw;
+            font-size: 0.98rem;
+            padding: 10px 6px;
+        }
+        table, th, td {
+            font-size: 0.92em;
+        }
+    }
+</style>
+                <style>
+                    @media screen {
+                        
+                html, body {
+                    min-height: 0;
+                    max-width: none;
+                    margin: 0;
+                    padding: 0;
+                    background: #ffffff !important;
+                    color: #171717 !important;
+                    font-size: 11pt;
+                    line-height: 1.75;
+                }
+                .pdf-conversation {
+                    padding: 0;
+                    max-width: 180mm;
+                    margin: 0 auto;
+                    background: #ffffff !important;
+                }
+                .header {
+                    text-align: left;
+                    margin: 0 0 28pt;
+                    padding: 0;
+                    border: 0;
+                    break-after: avoid;
+                }
+                .header h1 {
+                    font-size: 18pt;
+                    font-weight: 600;
+                    line-height: 1.35;
+                    overflow-wrap: anywhere;
+                    color: #171717 !important;
+                }
+                .header p {
+                    margin: 6pt 0 0;
+                    font-size: 8pt;
+                    color: #595959 !important;
+                }
+                .header h3, .header small { display: none; }
+
+                .message {
+                    display: block;
+                    float: none !important;
+                    overflow: visible;
+                    clear: both;
+                    margin: 0 0 24pt;
+                    padding: 0;
+                    break-inside: auto;
+                    page-break-inside: auto;
+                }
+                .message-avatar, .message-time { display: none !important; }
+
+                .message-content {
+                    display: block !important;
+                    float: none !important;
+                    max-width: none !important;
+                    width: auto !important;
+                    margin: 0 !important;
+                    padding: 0;
+                    border: 0 !important;
+                    border-radius: 0;
+                    font-size: 11pt;
+                    color: #171717 !important;
+                    overflow-wrap: anywhere;
+                    orphans: 3;
+                    widows: 3;
+                }
+                .message.right .message-content {
+                    box-sizing: border-box;
+                    width: fit-content !important;
+                    max-width: 82% !important;
+                    margin-left: auto !important;
+                    padding: 10pt 14pt;
+                    border-radius: 18pt;
+                    color: #173e76 !important;
+                    background: #e8f3fe !important;
+                    -webkit-box-decoration-break: clone;
+                    box-decoration-break: clone;
+                }
+                .message.left .message-content {
+                    background: transparent !important;
+                }
+                .message-content h1, .message-content h2, .message-content h3,
+                .message-content h4, .message-content strong, .message-content li,
+                .message-content div, .message-content p, .message-content span {
+                    color: #171717 !important;
+                }
+                .message-content h1, .message-content h2, .message-content h3,
+                .message-content h4, .message-content h5, .message-content h6 {
+                    line-height: 1.4;
+                    margin: 16pt 0 8pt;
+                    font-weight: 600;
+                    break-after: avoid;
+                }
+                .message-content h1 { font-size: 17pt; }
+                .message-content h2 { font-size: 15pt; }
+                .message-content h3 { font-size: 12.5pt; }
+                .message-content > :first-child { margin-top: 0; }
+                .message-content > :last-child { margin-bottom: 0; }
+                .message-content ul, .message-content ol { padding-left: 18pt; margin: 8pt 0; }
+                .message-content li { margin: 4pt 0; }
+                .message-content > div + div { margin-top: 10pt; }
+
+                a { color: #171717 !important; text-underline-offset: 2pt; }
+                pre {
+                    white-space: pre-wrap;
+                    overflow: visible;
+                    overflow-wrap: anywhere;
+                    word-break: break-word;
+                    padding: 12pt;
+                    margin: 12pt 0;
+                    border-radius: 8pt;
+                    background: #f7f7f7 !important;
+                    color: #171717 !important;
+                    border: 0 !important;
+                    font-size: 9.5pt;
+                    line-height: 1.6;
+                    break-inside: auto;
+                    -webkit-box-decoration-break: clone;
+                    box-decoration-break: clone;
+                }
+                code {
+                    font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+                    padding: 1pt 4pt;
+                    font-size: 0.9em;
+                    background: #eeeeee !important;
+                    color: #171717 !important;
+                }
+                pre code {
+                    padding: 0;
+                    font-size: inherit;
+                    background: transparent !important;
+                }
+                blockquote {
+                    margin: 12pt 0;
+                    padding: 0 12pt;
+                    border-left: 3px solid #dedede !important;
+                    color: #171717 !important;
+                }
+                hr { border: 0; border-top: 1px solid #dedede; margin: 18pt 0; }
+                .message-image {
+                    max-width: 100%;
+                    max-height: 110mm;
+                    object-fit: contain;
+                    break-inside: avoid;
+                }
+                table {
+                    table-layout: fixed;
+                    margin: 12pt 0;
+                    font-size: 10pt;
+                    background: transparent !important;
+                    color: #171717 !important;
+                }
+                th, td {
+                    padding: 7pt 8pt;
+                    border: 0 !important;
+                    border-bottom: 1px solid #dedede !important;
+                    color: #171717 !important;
+                    vertical-align: top;
+                }
+                th { font-weight: 600; background: transparent !important; }
+                tr:nth-child(even) { background: transparent !important; }
+                thead { display: table-header-group; }
+                tr { break-inside: avoid; }
+
+                .export-info {
+                    margin-top: 24pt;
+                    padding-top: 0;
+                    border: 0 !important;
+                    font-size: 8pt;
+                    color: #595959 !important;
+                    break-inside: avoid;
+                }
+        
+                        .pdf-conversation { padding: 48px 24px; }
+                        .message-image { cursor: zoom-in; }
+                        @media (max-width: 600px) {
+                            .pdf-conversation { padding: 24px 16px; }
+                        }
+                    }
+                    
+            @page {
+                margin: 16mm 18mm;
+                background: #ffffff;
+            }
+            @media print {
+                
+                html, body {
+                    min-height: 0;
+                    max-width: none;
+                    margin: 0;
+                    padding: 0;
+                    background: #ffffff !important;
+                    color: #171717 !important;
+                    font-size: 11pt;
+                    line-height: 1.75;
+                }
+                .pdf-conversation {
+                    padding: 0;
+                    max-width: 180mm;
+                    margin: 0 auto;
+                    background: #ffffff !important;
+                }
+                .header {
+                    text-align: left;
+                    margin: 0 0 28pt;
+                    padding: 0;
+                    border: 0;
+                    break-after: avoid;
+                }
+                .header h1 {
+                    font-size: 18pt;
+                    font-weight: 600;
+                    line-height: 1.35;
+                    overflow-wrap: anywhere;
+                    color: #171717 !important;
+                }
+                .header p {
+                    margin: 6pt 0 0;
+                    font-size: 8pt;
+                    color: #595959 !important;
+                }
+                .header h3, .header small { display: none; }
+
+                .message {
+                    display: block;
+                    float: none !important;
+                    overflow: visible;
+                    clear: both;
+                    margin: 0 0 24pt;
+                    padding: 0;
+                    break-inside: auto;
+                    page-break-inside: auto;
+                }
+                .message-avatar, .message-time { display: none !important; }
+
+                .message-content {
+                    display: block !important;
+                    float: none !important;
+                    max-width: none !important;
+                    width: auto !important;
+                    margin: 0 !important;
+                    padding: 0;
+                    border: 0 !important;
+                    border-radius: 0;
+                    font-size: 11pt;
+                    color: #171717 !important;
+                    overflow-wrap: anywhere;
+                    orphans: 3;
+                    widows: 3;
+                }
+                .message.right .message-content {
+                    box-sizing: border-box;
+                    width: fit-content !important;
+                    max-width: 82% !important;
+                    margin-left: auto !important;
+                    padding: 10pt 14pt;
+                    border-radius: 18pt;
+                    color: #173e76 !important;
+                    background: #e8f3fe !important;
+                    -webkit-box-decoration-break: clone;
+                    box-decoration-break: clone;
+                }
+                .message.left .message-content {
+                    background: transparent !important;
+                }
+                .message-content h1, .message-content h2, .message-content h3,
+                .message-content h4, .message-content strong, .message-content li,
+                .message-content div, .message-content p, .message-content span {
+                    color: #171717 !important;
+                }
+                .message-content h1, .message-content h2, .message-content h3,
+                .message-content h4, .message-content h5, .message-content h6 {
+                    line-height: 1.4;
+                    margin: 16pt 0 8pt;
+                    font-weight: 600;
+                    break-after: avoid;
+                }
+                .message-content h1 { font-size: 17pt; }
+                .message-content h2 { font-size: 15pt; }
+                .message-content h3 { font-size: 12.5pt; }
+                .message-content > :first-child { margin-top: 0; }
+                .message-content > :last-child { margin-bottom: 0; }
+                .message-content ul, .message-content ol { padding-left: 18pt; margin: 8pt 0; }
+                .message-content li { margin: 4pt 0; }
+                .message-content > div + div { margin-top: 10pt; }
+
+                a { color: #171717 !important; text-underline-offset: 2pt; }
+                pre {
+                    white-space: pre-wrap;
+                    overflow: visible;
+                    overflow-wrap: anywhere;
+                    word-break: break-word;
+                    padding: 12pt;
+                    margin: 12pt 0;
+                    border-radius: 8pt;
+                    background: #f7f7f7 !important;
+                    color: #171717 !important;
+                    border: 0 !important;
+                    font-size: 9.5pt;
+                    line-height: 1.6;
+                    break-inside: auto;
+                    -webkit-box-decoration-break: clone;
+                    box-decoration-break: clone;
+                }
+                code {
+                    font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+                    padding: 1pt 4pt;
+                    font-size: 0.9em;
+                    background: #eeeeee !important;
+                    color: #171717 !important;
+                }
+                pre code {
+                    padding: 0;
+                    font-size: inherit;
+                    background: transparent !important;
+                }
+                blockquote {
+                    margin: 12pt 0;
+                    padding: 0 12pt;
+                    border-left: 3px solid #dedede !important;
+                    color: #171717 !important;
+                }
+                hr { border: 0; border-top: 1px solid #dedede; margin: 18pt 0; }
+                .message-image {
+                    max-width: 100%;
+                    max-height: 110mm;
+                    object-fit: contain;
+                    break-inside: avoid;
+                }
+                table {
+                    table-layout: fixed;
+                    margin: 12pt 0;
+                    font-size: 10pt;
+                    background: transparent !important;
+                    color: #171717 !important;
+                }
+                th, td {
+                    padding: 7pt 8pt;
+                    border: 0 !important;
+                    border-bottom: 1px solid #dedede !important;
+                    color: #171717 !important;
+                    vertical-align: top;
+                }
+                th { font-weight: 600; background: transparent !important; }
+                tr:nth-child(even) { background: transparent !important; }
+                thead { display: table-header-group; }
+                tr { break-inside: avoid; }
+
+                .export-info {
+                    margin-top: 24pt;
+                    padding-top: 0;
+                    border: 0 !important;
+                    font-size: 8pt;
+                    color: #595959 !important;
+                    break-inside: avoid;
+                }
+        
+                *, *::before, *::after {
+                    -webkit-print-color-adjust: exact !important;
+                    print-color-adjust: exact !important;
+                }
+                .lightbox { display: none !important; }
+            }
+        
+                </style>
+                <div class="header">
+                    <h1>المزيد عن تصوير الطيور</h1>
+                    <h3>ChatGPT Conversation</h3>
+                    <p>Exported on 10/27/2026, 5:37:01 PM</p>
+                    <small>Powered by <a target="_blank" href="https://gptpdfexporter.extensionsbox.com">ExtensionsBox</a></small>
+                </div>
+        <div class="message right"><div class="message-avatar">U</div><div class="message-content"><div>أعطني المزيد عن تصوير الطيور
+للمبتدئين مع الأمثلة</div>
+<div class="message-time">10/27/2026, 1:29:16 PM</div></div></div><div class="message left"><div class="message-avatar">AI</div><div class="message-content"><h1>فن تصوير الطيور للمبتدئين</h1>
+<div><em>Bird Photography for Beginners — من مراقبة الطائر إلى صناعة صورة جميلة</em></div>
+<div>&lt;AsyncImageGroup query={[“kingfisher bird perched on branch wildlife photography eye level”,“small songbird perched in soft morning light photography”,“heron bird taking flight wildlife photography”,“hoopoe bird in natural habitat photography”]} aspectRatio=“5:4” layout=“bento” numPerQuery={1}/&gt;</div>
+<div>تصوير الطيور من أجمل فروع التصوير الفوتوغرافي؛ لأنه يجمع بين <strong>الملاحظة، والصبر، وسرعة الاستجابة، وفهم الضوء، والتكوين الفني</strong>. وأنت كمصور مبتدئ، لا تحتاج إلى كاميرا باهظة الثمن حتى تبدأ، بل تحتاج إلى معرفة سلوك الطائر، واختيار المكان والوقت المناسبين، وفهم كيفية تحويل مشهد عادي إلى صورة مؤثرة.</div>
+<div>سنتعلم هنا بالتدريج، مع أمثلة عملية يمكنك تطبيقها بكاميرتك أو حتى بالهاتف في البداية.</div>
+<h2>1. ما الذي يجعل صورة الطائر ناجحة؟</h2>
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;gap:0.75rem">
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>أولاً: العين الحادة (Sharp Eye)</strong></div>
+<div>من أهم عناصر تصوير الطيور أن تكون عين الطائر واضحة وحادة؛ لأن المشاهد ينجذب غالباً إلى العين أولاً.</div>
+<div>&lt;text color=“secondary” size=“sm”&gt;مثال:&lt;/text&gt;
+صورتان لعصفور على غصن: الأولى حادة العين والثانية حادة الجسم لكن العين ضبابية. غالباً ستكون الأولى أكثر إقناعاً، حتى لو كان تكوين الثانية جميلاً.</div>
+</div>
+</div>
+<div>&lt;divider color=“subtle”/&gt;</div>
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>ثانياً: الخلفية (Background)</strong></div>
+<div>الخلفية البسيطة تساعد الطائر على الظهور بوضوح. ابحث عن خلفية بعيدة وهادئة، مثل الأشجار الخضراء أو السماء.</div>
+<div>&lt;text color=“secondary” size=“sm”&gt;مثال:&lt;/text&gt;
+بدلاً من تصوير طائر أمام أغصان متشابكة، تحرك جانبياً حتى يصبح خلفه جزء بعيد من الأشجار، فتظهر الخلفية ناعمة وغير مشتتة.</div>
+</div>
+</div>
+<div>&lt;divider color=“subtle”/&gt;</div>
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>ثالثاً: المساحة أمام اتجاه النظر</strong></div>
+<div>إذا كان الطائر ينظر إلى اليمين، جرّب ترك مساحة فارغة في يمين الإطار.</div>
+<div>&lt;text color=“secondary” size=“sm”&gt;مثال:&lt;/text&gt;
+ضع الطائر في الثلث الأيسر من الصورة واترك أمامه مساحة من السماء أو الأشجار. هذا يمنح الصورة توازناً وراحة بصرية.</div>
+</div>
+</div>
+<div>&lt;divider color=“subtle”/&gt;</div>
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>رابعاً: الضوء المناسب</strong></div>
+<div>غالباً ما يكون الصباح الباكر أو آخر النهار مناسباً؛ فالضوء يكون ألطف، وقد تظهر تفاصيل الريش بصورة أجمل.</div>
+<div>&lt;text color=“secondary” size=“sm”&gt;مثال:&lt;/text&gt;
+إذا كان الضوء يأتي من جانب الطائر، فقد يُظهر تفاصيل الريش ويمنح الجسم حجماً، بدلاً من أن يبدو مسطحاً.</div>
+</div>
+</div>
+</div>
+<h2>2. ما المعدات المناسبة للمبتدئ؟</h2>
+<div>لا تجعل المعدات عائقاً أمام البداية. ابدأ بما لديك، ثم طوّر أدواتك وفق نوع الصور التي تستمتع بالتقاطها.</div>
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;gap:0.75rem">
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>الكاميرا والعدسة</strong></div>
+<div>إذا كنت تستخدم كاميرا ذات عدسات قابلة للتبديل، فإن العدسة المقربة تساعدك على تصوير الطيور من مسافة مناسبة.</div>
+<ul>
+<li>نطاق مثل 200–400 مم نقطة بداية عملية.</li>
+<li>عدسات 100–400 مم أو 150–600 مم تمنحك مرونة أكبر بحسب توافقها مع الكاميرا.</li>
+<li>لا يشترط أن تبدأ بأطول عدسة أو أغلاها.</li>
+</ul>
+</div>
+</div>
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>الثبات وطريقة الإمساك</strong></div>
+<div>أمسك الكاميرا جيداً، واسند مرفقيك إلى جسمك، واستفد من مثبت الصورة إن كان متاحاً. يمكن استخدام حامل ثلاثي عند تصوير الطيور الساكنة، لكنه قد يحد من سرعة الحركة إذا احتجت إلى تتبع طائر طائر.</div>
+</div>
+</div>
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>أدوات مساعدة</strong></div>
+<ul>
+<li>منظار لمراقبة الطيور من بعيد.</li>
+<li>بطارية إضافية وبطاقة ذاكرة مناسبة.</li>
+<li>ملابس هادئة الألوان.</li>
+<li>تطبيق للتعرف على أنواع الطيور إذا احتجت إليه.</li>
+</ul>
+</div>
+</div>
+</div>
+<div><strong>مثال عملي:</strong> إذا كان الطائر صغيراً ويبعد عنك عدة أمتار، فقد يكون الاقتراب بهدوء أو الانتظار حتى يأتي إلى مكان مناسب أكثر فائدة من قص الصورة بشدة بعد التصوير.</div>
+<h2>3. أهم إعدادات الكاميرا لتصوير الطيور</h2>
+<div>هذه من أهم الخطوات التي ستساعدك على الانتقال من التقاط صور عشوائية إلى صور أكثر نجاحاً.</div>
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;gap:0.75rem">
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:center">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0">
+<div>&lt;icon name=“timer” size=“2xl”/&gt;</div>
+</div>
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>سرعة الغالق (Shutter Speed)</strong></div>
+<div>&lt;title size=“lg” color=“success”&gt;1/1000 ثانية&lt;/title&gt;
+&lt;text color=“secondary” size=“sm”&gt;بداية جيدة لتصوير طائر ساكن نسبياً مع وجود حركة بسيطة.&lt;/text&gt;</div>
+</div>
+</div>
+<div>&lt;divider color=“subtle”/&gt;</div>
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:center">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0">
+<div>&lt;icon name=“aperture” size=“2xl”/&gt;</div>
+</div>
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>فتحة العدسة (Aperture)</strong></div>
+<div>&lt;title size=“lg” color=“success”&gt;f/5.6 – f/8&lt;/title&gt;
+&lt;text color=“secondary” size=“sm”&gt;بحسب العدسة والضوء؛ تساعد الفتحة الواسعة على فصل الطائر عن الخلفية، بينما تمنح الفتحة الأصغر عمق مجال أكبر.&lt;/text&gt;</div>
+</div>
+</div>
+<div>&lt;divider color=“subtle”/&gt;</div>
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:center">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0">
+<div>&lt;icon name=“gauge” size=“2xl”/&gt;</div>
+</div>
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>حساسية الضوء (ISO)</strong></div>
+<div>&lt;title size=“lg” color=“success”&gt;ISO تلقائي&lt;/title&gt;
+&lt;text color=“secondary” size=“sm”&gt;استخدم Auto ISO عند الحاجة إلى سرعة غالق ثابتة، مع تحديد حد أعلى مناسب لقدرات الكاميرا.&lt;/text&gt;</div>
+</div>
+</div>
+<div>&lt;divider color=“subtle”/&gt;</div>
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:center">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0">
+<div>&lt;icon name=“focus” size=“2xl”/&gt;</div>
+</div>
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>التركيز التلقائي (Autofocus)</strong></div>
+<div>&lt;title size=“lg” color=“success”&gt;AF-C / Servo + Eye AF&lt;/title&gt;
+&lt;text color=“secondary” size=“sm”&gt;استخدم التركيز المستمر مع اكتشاف عين الطيور إن كانت الكاميرا تدعمه. راجع موضع التركيز قبل التقاط الصورة.&lt;/text&gt;</div>
+</div>
+</div>
+</div>
+<div>هذه الأرقام إرشادية وليست قواعد ثابتة. إليك كيف تتغير الإعدادات حسب الموقف:</div>
+<table>
+<thead>
+<tr>
+<th>حالة التصوير</th>
+<th style="text-align:right">سرعة غالق مقترحة كبداية</th>
+<th>ملاحظة</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>طائر ساكن</td>
+<td style="text-align:right">1/500–1/1000</td>
+<td>ارفع السرعة إذا تحرك الرأس</td>
+</tr>
+<tr>
+<td>طائر يتحرك أو يقفز</td>
+<td style="text-align:right">1/1000–1/2000</td>
+<td>تابع الحركة باستمرار</td>
+</tr>
+<tr>
+<td>طائر يطير</td>
+<td style="text-align:right">1/2000–1/3200</td>
+<td>قد تحتاج سرعة أعلى للحركة السريعة</td>
+</tr>
+<tr>
+<td>طائر أثناء الإقلاع</td>
+<td style="text-align:right">1/2000 تقريباً</td>
+<td>ابدأ التصوير قبل لحظة الإقلاع إن أمكن</td>
+</tr>
+</tbody>
+</table>
+<div><strong>مثال:</strong> إذا كنت تصور عصفوراً صغيراً في الظل بسرعة 1/250 ثانية، فقد تظهر العين أو الرأس غير حادين بسبب الحركة. جرّب 1/1000 ثانية، ودع الكاميرا ترفع ISO عند الضرورة. صورة قليلة الضجيج لكنها مهزوزة ليست بالضرورة أفضل من صورة حادة مع ضجيج محدود.</div>
+<h2>4. خمسة أساليب أساسية لتصوير الطيور</h2>
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;gap:1rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;gap:0.5rem">
+<div><strong>الأسلوب الأول: صورة الطائر الشخصية (Bird Portrait)</strong></div>
+<div>الهدف هو إظهار ملامح الطائر، وعينه، وتفاصيل ريشه، وشخصيته البصرية.</div>
+<ul>
+<li>اقترب بصرياً باستخدام العدسة، وليس بالمطاردة.</li>
+<li>ركز على العين الأقرب إلى الكاميرا.</li>
+<li>اختر خلفية بعيدة وهادئة.</li>
+<li>جرّب فتحة واسعة إذا كان الضوء يسمح بذلك.</li>
+</ul>
+<div><em>مثال:</em> صورة لطائر الحسون على غصن، تظهر تفاصيل الرأس والريش، مع خلفية خضراء ضبابية. هنا لا نحتاج إلى إظهار البيئة كلها؛ بل نريد إبراز جمال الطائر.</div>
+</div>
+<div>&lt;divider color=“subtle”/&gt;</div>
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;gap:0.5rem">
+<div><strong>الأسلوب الثاني: الطائر في بيئته (Bird in Habitat)</strong></div>
+<div>لا تجعل الطائر دائماً يحتل معظم الإطار. أحياناً تكون البيئة جزءاً أساسياً من القصة.</div>
+<ul>
+<li>أظهر الغصن أو العشب أو الماء المحيط به.</li>
+<li>استخدم عناصر البيئة لتوجيه النظر.</li>
+<li>انتبه إلى عدم اندماج لون الطائر مع الخلفية.</li>
+</ul>
+<div><em>مثال:</em> طائر الهدهد وسط العشب، مع إظهار الأرض والنباتات حوله. الصورة هنا لا توثق شكل الطائر فحسب، بل توضح علاقته ببيئته.</div>
+</div>
+<div>&lt;divider color=“subtle”/&gt;</div>
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;gap:0.5rem">
+<div><strong>الأسلوب الثالث: الحركة (Action Photography)</strong></div>
+<div>تصوير الطائر وهو يطير أو يهبط أو يصطاد أصعب من تصويره ساكناً، لكنه يضيف إحساساً بالحيوية.</div>
+<ul>
+<li>استخدم سرعة غالق عالية.</li>
+<li>فعّل التصوير المتتابع (Continuous Shooting).</li>
+<li>استخدم التركيز المستمر.</li>
+<li>ابدأ بتتبع الطائر قبل الضغط على الغالق.</li>
+</ul>
+<div><em>مثال:</em> طائر الرفراف يغوص باتجاه الماء. إذا نجحت في تجميد حركة الأجنحة وقطرات الماء، تصبح الصورة أكثر تعبيراً من صورة الطائر واقفاً فقط.</div>
+</div>
+<div>&lt;divider color=“subtle”/&gt;</div>
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;gap:0.5rem">
+<div><strong>الأسلوب الرابع: الطيران بخلفية نظيفة (Bird in Flight)</strong></div>
+<div>من أفضل التدريبات على سرعة الاستجابة.</div>
+<ul>
+<li>اختر خلفية السماء لتسهيل التركيز.</li>
+<li>اترك مساحة أمام اتجاه الطيران.</li>
+<li>حاول أن تكون الأجنحة في وضعية جميلة.</li>
+<li>التقط سلسلة صور ثم اختر الأفضل.</li>
+</ul>
+<div><em>مثال:</em> طائر أبيض يطير باتجاه اليمين، وتترك مساحة أمامه في الإطار. حتى إن لم تملأ الصورة بالتفاصيل، يمكن أن تكون ناجحة بفضل الحركة والتوازن.</div>
+</div>
+<div>&lt;divider color=“subtle”/&gt;</div>
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;gap:0.5rem">
+<div><strong>الأسلوب الخامس: الصورة الإبداعية (Creative Bird Photography)</strong></div>
+<div>هنا ننتقل من توثيق الطائر إلى استخدامه عنصراً بصرياً يحمل معنى.</div>
+<ul>
+<li>جرّب التصوير ضد الضوء لصناعة الظلال الداكنة.</li>
+<li>استخدم المساحات الفارغة.</li>
+<li>ابحث عن انعكاس الطائر في الماء.</li>
+<li>فكّر في العلاقة بين الطائر والبيئة.</li>
+</ul>
+<div><em>مثال:</em> طائر منفرد على غصن أمام سماء غروب واسعة. قد توحي الصورة بالعزلة أو الحرية، لكن قوة المعنى تعتمد على شكل الطائر والتكوين والسياق، لا على العنوان وحده.</div>
+</div>
+</div>
+<h2>5. كيف تختار التكوين المناسب؟</h2>
+<div>التكوين لا يقل أهمية عن حدة الصورة. تستطيع تطبيق عدة قواعد بسيطة حتى في أول يوم لك.</div>
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;gap:0.75rem">
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>قاعدة الأثلاث (Rule of Thirds)</strong></div>
+<div>ضع عين الطائر قرب أحد تقاطعات خطوط الأثلاث بدلاً من وضعه في المنتصف دائماً.</div>
+<div><strong>التطبيق:</strong> إذا كان الطائر ينظر إلى اليمين، ضعه في الثلث الأيسر واترك مساحة باتجاه نظره.</div>
+</div>
+</div>
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>مستوى عين الطائر (Eye-Level)</strong></div>
+<div>عندما تسمح الظروف، صوّر من مستوى قريب من عين الطائر. قد يتطلب ذلك الانحناء أو اختيار مكان مرتفع أو منخفض مناسب.</div>
+<div><strong>التطبيق:</strong> بدلاً من تصوير عصفور على الأرض من أعلى، جرّب التصوير من مستوى منخفض؛ فتبدو العلاقة بينك وبين الطائر أكثر مباشرة.</div>
+</div>
+</div>
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>المساحة السلبية (Negative Space)</strong></div>
+<div>اترك جزءاً من الصورة هادئاً وخالياً من العناصر المهمة.</div>
+<div><strong>التطبيق:</strong> طائر صغير على غصن في الجانب السفلي من الإطار، وخلفه مساحة واسعة من السماء. يمكن لهذا التكوين أن يعبّر عن الهدوء أو الاتساع.</div>
+</div>
+</div>
+</div>
+<h2>6. كيف تتعامل مع مواقف التصوير الشائعة؟</h2>
+<div>{@body const [scenario,setScenario] = DIL.useState(“perched”)}
+{@body const scenarios = {“perched”:{title:“طائر ساكن على غصن”,settings:“1/800 ثانية، فتحة f/5.6 أو أوسع إن أمكن، وAuto ISO.”,focus:“AF-C إذا كان الطائر يتحرك، مع التركيز على العين.”,composition:“خلفية بعيدة ومساحة أمام اتجاه النظر.”,tip:“التقط عدة صور، لأن الطائر قد يحرك رأسه فجأة.”},“flight”:{title:“طائر يطير في السماء”,settings:“ابدأ بـ 1/2000 ثانية أو أسرع، وفتحة مناسبة للضوء.”,focus:“التركيز المستمر ومنطقة تتبع مناسبة، مع التصوير المتتابع.”,composition:“اترك مساحة أمام اتجاه الطيران، وتجنب قص أطراف الأجنحة.”,tip:“تدرّب أولاً على طيور أكبر حجماً وبخلفية سماء نظيفة.”},“shade”:{title:“طائر في الظل”,settings:“حافظ على سرعة مناسبة، وارفع ISO بدلاً من إبطاء الغالق كثيراً.”,focus:“تأكد من ثبات نقطة التركيز على العين.”,composition:“اختر زاوية تُظهر الوجه ولا تجعل الخلفية المضيئة تشتت الانتباه.”,tip:“راقب التعريض؛ فقد تحتاج إلى تعويض موجب بسيط إذا أصبح الطائر داكناً، مع حماية المناطق الساطعة.”},“water”:{title:“طائر قرب الماء”,settings:“1/1000 ثانية أو أكثر للحركة، وسرعة أعلى عند تناثر الماء.”,focus:“تتبع الرأس أو العين، لا انعكاس الطائر وحده.”,composition:“استفد من الانعكاس، واترك مساحة كافية حوله.”,tip:“انتبه إلى لمعان الماء كي لا يفقد تفاصيله بسبب التعريض الزائد.”}}}</div>
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;gap:0.75rem">
+<div>&lt;text color=“secondary” size=“sm”&gt;اختر الموقف الذي تريد التدريب عليه:&lt;/text&gt;
+&lt;radio-group value={scenario} onChange={setScenario} direction=“col”&gt;
+&lt;radio value=“perched”&gt;طائر ساكن على غصن&lt;/radio&gt;
+&lt;radio value=“flight”&gt;طائر في أثناء الطيران&lt;/radio&gt;
+&lt;radio value=“shade”&gt;طائر في الظل&lt;/radio&gt;
+&lt;radio value=“water”&gt;طائر قرب الماء&lt;/radio&gt;
+&lt;/radio-group&gt;
+&lt;divider color=“subtle”/&gt;
+&lt;title size=“lg”&gt;{scenarios[scenario].title}&lt;/title&gt;
+<strong>الإعدادات المقترحة</strong></div>
+<div>{scenarios[scenario].settings}</div>
+<div><strong>التركيز</strong></div>
+<div>{scenarios[scenario].focus}</div>
+<div><strong>التكوين</strong></div>
+<div>{scenarios[scenario].composition}</div>
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;gap:0.25rem">
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:center;gap:0.5rem">
+<div>&lt;icon name=“lightbulb” size=“lg”/&gt;
+<strong>نصيحة ميدانية</strong></div>
+</div>
+<div>{scenarios[scenario].tip}</div>
+</div>
+</div>
+<h2>7. أخطاء شائعة يقع فيها المبتدئ</h2>
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;gap:0.5rem">
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.5rem">
+<div>&lt;icon name=“x-circle” color=“danger” size=“lg”/&gt;</div>
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>استخدام سرعة غالق منخفضة</strong></div>
+<div>النتيجة: طائر ضبابي بسبب الحركة. الحل هو إعطاء الأولوية لسرعة مناسبة للحركة، خصوصاً مع الطيور الصغيرة.</div>
+</div>
+</div>
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.5rem">
+<div>&lt;icon name=“x-circle” color=“danger” size=“lg”/&gt;</div>
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>قص الصورة بشدة بعد التصوير</strong></div>
+<div>النتيجة: تفاصيل أقل وضجيج أوضح. حاول ملء الإطار بصرياً عند التصوير، من دون الاقتراب بطريقة تزعج الطائر.</div>
+</div>
+</div>
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.5rem">
+<div>&lt;icon name=“x-circle” color=“danger” size=“lg”/&gt;</div>
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>تجاهل الخلفية</strong></div>
+<div>النتيجة: أغصان أو أجسام تمر بصرياً خلف رأس الطائر. الحل هو تغيير زاوية التصوير أو الانتظار حتى يتغير موضع الطائر.</div>
+</div>
+</div>
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.5rem">
+<div>&lt;icon name=“x-circle” color=“danger” size=“lg”/&gt;</div>
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>الاعتماد على التكبير الرقمي وحده</strong></div>
+<div>النتيجة: تفاصيل أقل في بعض الأجهزة. الأفضل استخدام العدسة البصرية المناسبة، أو الاقتراب الهادئ ضمن مسافة آمنة.</div>
+</div>
+</div>
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.5rem">
+<div>&lt;icon name=“x-circle” color=“danger” size=“lg”/&gt;</div>
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>ملاحقة الطائر باستمرار</strong></div>
+<div>النتيجة: توتر الطائر وصعوبة الحصول على لحظة طبيعية. اختر موقعاً مناسباً وانتظر؛ فكثيراً ما تأتي أفضل اللقطات عندما تتوقف عن مطاردة المشهد.</div>
+</div>
+</div>
+</div>
+<h2>8. برنامج تدريبي للمبتدئ لمدة أسبوع</h2>
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;gap:0.75rem">
+<div>{@body const [doneDays,setDoneDays] = DIL.useState([])}</div>
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:center">
+<div>&lt;title size=“lg”&gt;تحدي تصوير الطيور&lt;/title&gt;
+&lt;badge color={doneDays.length===7?“success”:“secondary”}&gt;{doneDays.length}/7 أيام&lt;/badge&gt;</div>
+</div>
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0">
+<div>&lt;box background=“surface-inverted” height=“6px” radius=“full” width={<code>${doneDays.length/7*100}%</code>}/&gt;</div>
+</div>
+<div>{#each [{day:1,title:“المراقبة”,desc:“راقب طائراً واحداً ولاحظ اتجاه النظر والحركة.”},{day:2,title:“حدة العين”,desc:“التقط صوراً متعددة وتحقق من وضوح العين.”},{day:3,title:“الخلفية”,desc:“صوّر الطائر من ثلاث زوايا مختلفة.”},{day:4,title:“سرعة الغالق”,desc:“جرّب سرعتين مختلفتين وقارن الحدة.”},{day:5,title:“التكوين”,desc:“جرّب وضع الطائر في الثلث الأيسر ثم الأيمن.”},{day:6,title:“الحركة”,desc:“جرّب تصوير الإقلاع أو الطيران إن توافرت الفرصة.”},{day:7,title:“اختيار أفضل صورة”,desc:“اختر صورة واحدة وقيّم الضوء والتركيز والخلفية والقصة.”}] as item,i}
+&lt;checkbox key={item.day} checked={doneDays.includes(item.day)} onChange={v=&gt;setDoneDays(old=&gt;v?[…old,item.day]:old.filter(d=&gt;d!==item.day))} lineThrough={false}&gt;
+&lt;box gap={1}&gt;
+<strong>اليوم {item.day}: {item.title}</strong></div>
+<pre><code>  &lt;text color=&quot;secondary&quot; size=&quot;sm&quot;&gt;{item.desc}&lt;/text&gt;
+&lt;/box&gt;
+</code></pre>
+<div>&lt;/checkbox&gt;
+{/each}</div>
+</div>
+<h2>9. كيف نقيّم صورة الطائر بعد التقاطها؟</h2>
+<div>بعد العودة إلى المنزل، لا تسأل فقط: «هل الصورة جميلة؟» بل راجعها بهذه المعايير:</div>
+<ul>
+<li><strong>الحدة:</strong> هل العين واضحة؟</li>
+<li><strong>الضوء:</strong> هل تفاصيل الريش ظاهرة دون احتراق المناطق الساطعة؟</li>
+<li><strong>التكوين:</strong> هل موضع الطائر والمساحة حوله يخدمان الصورة؟</li>
+<li><strong>الخلفية:</strong> هل تساعد على إبراز الموضوع؟</li>
+<li><strong>اللحظة:</strong> هل يظهر الطائر في وضعية طبيعية ومميزة؟</li>
+<li><strong>القيمة الفنية:</strong> هل تقدم الصورة شيئاً يتجاوز مجرد تسجيل وجود الطائر؟</li>
+</ul>
+<div>وتذكّر أن الصورة الناجحة لا تحتاج بالضرورة إلى طائر نادر؛ فقد تكون صورة عصفور مألوف أكثر تميزاً بسبب الضوء أو اللحظة أو التكوين.</div>
+<h2>10. قواعد أخلاقية مهمة</h2>
+<ul>
+<li>حافظ على مسافة لا تجعل الطائر يغير سلوكه بسبب وجودك.</li>
+<li>لا تقترب من الأعشاش أو الفراخ ولا تكشف مواقع الأنواع الحساسة.</li>
+<li>تجنب استخدام الأصوات المسجلة لجذب الطيور بصورة متكررة، خصوصاً في موسم التكاثر.</li>
+<li>لا تطارد الطائر للحصول على صورة أثناء الطيران.</li>
+<li>احترم قوانين المحميات وتعليمات مراقبة الحياة البرية.</li>
+</ul>
+<hr>
+<div><strong>الخطوة التالية المقترحة:</strong> يمكننا الانتقال إلى درس أكثر تخصصاً بعنوان <em>Bird Photography with Canon EOS R7</em>، يشرح إعدادات الكاميرا خطوة بخطوة، واختيار العدسة المناسبة، واستخدام Animal Eye Detection، وتصوير الطيور الساكنة والطيور أثناء الطيران، مع أمثلة تطبيقية على التعريض والتركيز والتكوين.</div>
+<div class="message-time">10/27/2026, 1:29:19 PM</div></div></div><div class="message right"><div class="message-avatar">U</div><div class="message-content"><div>أعطني المزيد عن تصوير الطيور
+متوسط الخبرة
+مع الأمثلة</div>
+<div class="message-time">10/27/2026, 1:31:12 PM</div></div></div><div class="message left"><div class="message-avatar">AI</div><div class="message-content"><h1>تصوير الطيور للمصور متوسط الخبرة</h1>
+<div><em>Intermediate Bird Photography — من الصورة الصحيحة تقنياً إلى الصورة المتميزة فنياً</em></div>
+<div>&lt;AsyncImageGroup query={[“kingfisher diving action wildlife photography dramatic water splash”,“European bee eater bird perched diagonal branch beautiful natural light”,“heron flying low over water reflection wildlife fine art photography”,“small bird backlit translucent feathers wildlife photography”]} aspectRatio=“5:4” layout=“bento” numPerQuery={1}/&gt;</div>
+<div>في المستوى المتوسط، لم يعد التحدي هو مجرد الحصول على صورة حادة للطائر، بل أصبح السؤال:</div>
+<div><strong>كيف أتحكم في سلوك الطائر داخل الإطار، والضوء، والخلفية، واللحظة، لكي أصنع صورة لها قيمة بصرية وقصة واضحة؟</strong></div>
+<div>في هذه المرحلة تبدأ بالانتقال من تصوير الطائر كما وجدته إلى <strong>توقع ما سيفعله، واختيار اللحظة المناسبة، وتشكيل المشهد بصرياً</strong>.</div>
+<div>سنتناول الموضوع عبر أمثلة ميدانية، وإعدادات متقدمة نسبياً، وتحليل فني للصورة، مع تطبيقات يمكن تجربتها باستخدام كاميرا مثل Canon R7 أو أي كاميرا ذات إمكانات مشابهة.</div>
+<h2>1. أول تطور مهم: توقّع سلوك الطائر بدلاً من مطاردته</h2>
+<div>المصور المتوسط لا ينتظر ظهور الحركة بصورة عشوائية؛ بل يحاول قراءة ما يسبقها.</div>
+<div>راقب الطائر قبل رفع الكاميرا، وانتبه إلى:</div>
+<ul>
+<li>اتجاه الرأس وتكرار الالتفات.</li>
+<li>طريقة الوقوف وتغيير وضعية الجسم.</li>
+<li>حركة الجناحين قبل الإقلاع.</li>
+<li>اقترابه من الماء أو مصدر الغذاء.</li>
+<li>تكرار عودته إلى الغصن نفسه.</li>
+</ul>
+<div>هذه العلامات ليست ضماناً لما سيحدث، لكنها تساعدك على الاستعداد للحظة المحتملة.</div>
+<div><strong>مثال تطبيقي: طائر الرفراف (Kingfisher)</strong></div>
+<div>بدلاً من تصويره واقفاً فقط، يمكنك اتباع تسلسل بصري:</div>
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;gap:0.5rem">
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>اللقطة الأولى: المراقبة</strong></div>
+<div>الطائر ينظر نحو الماء. استخدم التركيز المستمر وراقب اتجاه رأسه.</div>
+</div>
+</div>
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>اللقطة الثانية: الاستعداد</strong></div>
+<div>يصبح جسمه أكثر ميلاً إلى الأمام. ابدأ بالاستعداد للتصوير المتتابع.</div>
+</div>
+</div>
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>اللقطة الثالثة: الفعل</strong></div>
+<div>حاول تسجيل لحظة الغوص أو ملامسة الماء، مع سرعة غالق مناسبة للحركة.</div>
+</div>
+</div>
+</div>
+<div>الفكرة الأساسية هي أن <strong>المعرفة بالسلوك تزيد فرص الحصول على لحظة مميزة أكثر من الاعتماد على سرعة التصوير وحدها</strong>. &lt;Cite refs={[“turn375088search0”,“turn375088search8”]}/&gt;</div>
+<h2>2. التحكم المتقدم في التعريض Exposure</h2>
+<div>في المستوى المتوسط، لا يكفي أن يكون الطائر مضاءً؛ بل يجب أن تحافظ على تفاصيل الريش، وأن توازن بين سرعة الغالق وفتحة العدسة وISO.</div>
+<h3>أ. لماذا قد تفشل الصورة رغم صحة التعريض؟</h3>
+<div>تخيل أنك تصوّر طائراً أبيض فوق ماء داكن. قد يجعل نظام قياس الضوء الصورة أكثر سطوعاً مما ينبغي، فتفقد بعض تفاصيل الريش الأبيض.</div>
+<div>وفي الحالة العكسية، قد يظهر طائر أسود أمام سماء شديدة السطوع مظلماً أكثر من اللازم.</div>
+<div>الحل هو تقييم <strong>تعريض الطائر نفسه</strong>، لا الاكتفاء بمظهر الصورة المصغرة على الشاشة.</div>
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;gap:0.75rem">
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>الحالة الأولى: الطيور البيضاء</strong></div>
+<div>راقب المناطق الساطعة باستخدام تنبيه احتراق الإضاءات (Highlight Alert) والمدرج التكراري (Histogram).</div>
+<div>مثال: إذا فقد الريش الأبيض تفاصيله، جرّب تعويض تعريض سالباً بسيطاً، مثل ‎−1/3 EV، ثم راجع النتيجة.</div>
+</div>
+</div>
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>الحالة الثانية: الطيور الداكنة</strong></div>
+<div>لا ترفع السطوع عشوائياً حتى يصبح الريش رمادياً. راقب تفاصيل الظلال وضجيج الصورة.</div>
+<div>مثال: إذا كان الطائر أمام سماء ساطعة، اختبر تعويضاً موجباً بسيطاً فقط إذا بقيت الإضاءات المهمة محفوظة.</div>
+</div>
+</div>
+</div>
+<div>التعويض المناسب يعتمد على المشهد وطريقة القياس؛ لذلك لا توجد قيمة ثابتة لكل طائر أبيض أو أسود. &lt;Cite refs={[“turn375088search1”,“turn375088search8”]}/&gt;</div>
+<h2>3. إتقان التركيز التلقائي Autofocus في تصوير الطيور</h2>
+<div>في المستوى المتوسط، لا يكفي تشغيل التركيز التلقائي وترك الكاميرا تقرر كل شيء. عليك اختيار طريقة التركيز المناسبة للمشهد، وتحديد مقدار الحرية التي تمنحها للكاميرا في تتبع الطائر.</div>
+<h3>متى أستخدم كل وضع؟</h3>
+<table>
+<thead>
+<tr>
+<th>الموقف</th>
+<th>طريقة التركيز المقترحة</th>
+<th>السبب</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>طائر ثابت نسبياً</td>
+<td>One-Shot AF أو AF-S</td>
+<td>مناسب إذا كان الطائر ساكناً بالفعل</td>
+</tr>
+<tr>
+<td>طائر يتحرك على الغصن</td>
+<td>Servo AF أو AF-C</td>
+<td>يحدّث التركيز باستمرار</td>
+</tr>
+<tr>
+<td>طائر يطير في سماء مفتوحة</td>
+<td>تتبع مستمر مع منطقة واسعة</td>
+<td>يسهل إبقاء الطائر داخل منطقة التركيز</td>
+</tr>
+<tr>
+<td>طائر بين أغصان كثيفة</td>
+<td>منطقة تركيز أصغر أو Zone AF</td>
+<td>يقلل احتمال انتقال التركيز إلى الأغصان</td>
+</tr>
+<tr>
+<td>طائر صغير بعيد</td>
+<td>نقطة أو منطقة موجهة بعناية</td>
+<td>يساعد على منع التركيز على الخلفية</td>
+</tr>
+</tbody>
+</table>
+<h3>مثال عملي: عصفور خلف أغصان متشابكة</h3>
+<div>تخيل أن عصفوراً يقف خلف أوراق الشجر، والكاميرا تستمر في التركيز على الورقة الأقرب.</div>
+<div>جرّب الخطوات التالية:</div>
+<ol>
+<li>قلّل مساحة منطقة التركيز أو اختر منطقة موجهة نحو الطائر.</li>
+<li>وجّه نقطة التركيز إلى الرأس أو العين إذا أمكن.</li>
+<li>انتظر لحظة يظهر فيها الرأس بعيداً عن الأغصان.</li>
+<li>التقط عدة صور، ثم افحص العين عند تكبير الصورة.</li>
+</ol>
+<div>إذا كنت تستخدم Canon R7، فالكاميرا تدعم اكتشاف الحيوانات، بما فيها الطيور، مع تتبع الموضوع واكتشاف العين عند توافر الظروف المناسبة. لكن اكتشاف العين ليس مضموناً عندما يكون الطائر صغيراً جداً أو محجوباً أو مموهاً بين النباتات. &lt;Cite refs={[“turn765339search1”,“turn765339search4”]}/&gt;</div>
+<div><strong>قاعدة المستوى المتوسط:</strong> تعلّم متى تثق بالتتبع الآلي، ومتى تتدخل أنت لتوجيه التركيز.</div>
+<h2>4. تصوير الطيور أثناء الطيران: من اللقطة العشوائية إلى اللقطة المقصودة</h2>
+<div>&lt;AsyncImageGroup query={[“seagull flying wings fully extended side view against clean blue sky”,“heron taking off from water wings spread action wildlife photograph”,“flock of birds flying formation golden hour wildlife photography”]} aspectRatio=“5:4” layout=“bento” numPerQuery={1}/&gt;</div>
+<div>تصوير الطيور الطائرة مهارة تجمع بين سرعة الغالق، والتتبع، والتوقيت، والتكوين. ولا يكفي أن تكون الصورة حادة؛ بل يجب أن تكون وضعية الأجنحة واتجاه الحركة مناسبين أيضاً.</div>
+<h3>إعدادات مقترحة للتجربة</h3>
+<ul>
+<li>سرعة الغالق: ابدأ بـ 1/2000 إلى 1/3200 ثانية.</li>
+<li>فتحة العدسة: f/5.6 إلى f/8 إذا سمح الضوء.</li>
+<li>التركيز: Servo AF مع تتبع مستمر.</li>
+<li>التصوير المتتابع: High-speed Continuous.</li>
+<li>تنسيق الملفات: RAW إذا كنت تخطط لمعالجة الصورة بدقة.</li>
+</ul>
+<div>هذه نقطة بداية وليست وصفة ثابتة؛ فقد تحتاج الطيور السريعة أو ظروف الإضاءة الضعيفة إلى إعدادات مختلفة. &lt;Cite refs={[“turn375088search5”,“turn375088search11”]}/&gt;</div>
+<h3>كيف تتابع الطائر بالكاميرا؟</h3>
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;gap:0.75rem">
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>المرحلة الأولى: اكتساب الهدف</strong></div>
+<div>ابدأ بتوجيه العدسة نحو الطائر، ثم ضع الطائر داخل مجال التركيز قبل البدء بالتصوير المتتابع.</div>
+</div>
+</div>
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>المرحلة الثانية: التتبع</strong></div>
+<div>تابع الطائر بحركة سلسة من الجسم، لا بحركة مفاجئة من المعصم فقط. حاول الحفاظ على مسافة ثابتة بينه وبين حواف الإطار.</div>
+</div>
+</div>
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>المرحلة الثالثة: اختيار وضعية الجناحين</strong></div>
+<div>لا تتوقف عند أول صورة حادة. قارن بين الأجنحة المرفوعة والممتدة والمنخفضة؛ فقد تمنح كل وضعية إحساساً مختلفاً بالحركة.</div>
+</div>
+</div>
+</div>
+<h3>تمرين متوسط الخبرة</h3>
+<div>اختر طيوراً أكبر نسبياً، مثل النوارس أو الحمام في مكان مناسب، وجرّب التقاط سلسلة من الصور أثناء الطيران.</div>
+<div>بعد التصوير، صنّف النتائج إلى:</div>
+<ul>
+<li>صور حادة تقنياً.</li>
+<li>صور حادة مع وضعية جناحين جذابة.</li>
+<li>صور حادة وتكوينها متوازن.</li>
+<li>صور تحكي لحظة أو تفاعلًا مميزاً.</li>
+</ul>
+<div>ستلاحظ أن أفضل صورة ليست بالضرورة الصورة التي تتمتع بأعلى حدة وحدها.</div>
+<h2>5. فهم الضوء: الإضاءة الخلفية والجانبية والمنتشرة</h2>
+<div>&lt;AsyncImageGroup query={[“backlit bird translucent feathers rim light wildlife photography”,“side lit owl bird feathers detailed natural photography”,“bird photographed in soft overcast light natural wildlife photography”]} aspectRatio=“5:4” layout=“carousel” numPerQuery={1}/&gt;</div>
+<div>في المستوى المتوسط، لا تتعامل مع الضوء باعتباره مجرد وسيلة لإظهار الطائر. استخدمه لتحديد المزاج، وإبراز ملمس الريش، وتوجيه نظر المشاهد.</div>
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;gap:0.25rem">
+<div><strong>أ. الضوء الجانبي (Side Lighting)</strong></div>
+<div>يأتي الضوء من أحد جانبي الطائر، فيظهر جانب مضاء وآخر أقل إضاءة.</div>
+<div><em>مثال:</em> تصوير بومة على غصن بضوء جانبي ناعم يبرز تفاصيل الريش حول الوجه، ويمنح الجسم إحساساً بالحجم.</div>
+</div>
+<div>&lt;divider color=“subtle”/&gt;</div>
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;gap:0.25rem">
+<div><strong>ب. الإضاءة الخلفية (Backlighting)</strong></div>
+<div>يكون مصدر الضوء خلف الطائر، وقد تظهر حواف مضيئة حول الريش.</div>
+<div><em>مثال:</em> تصوير طائر عند شروق الشمس، بحيث تتوهج أطراف ريش الجناحين. راقب التعريض لأن الخلفية قد تكون شديدة السطوع.</div>
+</div>
+<div>&lt;divider color=“subtle”/&gt;</div>
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;gap:0.25rem">
+<div><strong>ج. الضوء المنتشر (Diffused Light)</strong></div>
+<div>يحدث غالباً في الأيام الغائمة أو عند وجود ضوء ناعم.</div>
+<div><em>مثال:</em> طائر أبيض على ضفة ماء في يوم غائم؛ يساعد الضوء الناعم على تقليل التباين الحاد وإظهار تفاصيل الريش.</div>
+</div>
+</div>
+<div>تغيير موضعك بضع خطوات قد يغير الخلفية والضوء معاً، ولهذا فإن الحركة الهادئة حول المشهد قد تكون أهم من تغيير إعدادات الكاميرا وحدها. &lt;Cite refs={[“turn375088search4”,“turn375088search9”]}/&gt;</div>
+<h2>6. التكوين المتقدم: كيف تجعل عين المشاهد تتحرك داخل الصورة؟</h2>
+<div>&lt;AsyncImageGroup query={[“minimalist bird on branch with large negative space fine art wildlife photography”,“two birds interacting on branch wildlife photography composition”,“bird reflected in still water symmetrical wildlife photograph”]} aspectRatio=“5:4” layout=“bento” numPerQuery={1}/&gt;</div>
+<div>في المستوى المتوسط، جرّب تجاوز قاعدة الأثلاث عندما يتطلب المشهد تكويناً مختلفاً. فكّر في العلاقة بين الطائر والفراغ والاتجاه والخطوط.</div>
+<h3>أربعة أساليب للتكوين</h3>
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;gap:0.75rem">
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>1. الطائر الصغير والمساحة الواسعة</strong></div>
+<div>استخدم المساحة السلبية لإظهار العزلة أو الاتساع.</div>
+<div><em>مثال:</em> طائر صغير على صخرة وسط مشهد ضبابي واسع. لا تقص الصورة كثيراً؛ فالمساحة جزء من الفكرة.</div>
+</div>
+</div>
+<div>&lt;divider color=“subtle”/&gt;</div>
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>2. العلاقة بين طائرين</strong></div>
+<div>وجّه الانتباه إلى اتجاه النظر أو التفاعل بين الطائرين.</div>
+<div><em>مثال:</em> طائران متقابلان على غصن. تصبح المسافة بينهما جزءاً من القصة، وقد تكون أهم من تفاصيل الريش.</div>
+</div>
+</div>
+<div>&lt;divider color=“subtle”/&gt;</div>
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>3. الخطوط القائدة (Leading Lines)</strong></div>
+<div>استعمل الغصن أو حافة الماء لتوجيه العين نحو الطائر.</div>
+<div><em>مثال:</em> غصن قطري يبدأ من إحدى زوايا الصورة وينتهي قرب رأس الطائر، فيربط أجزاء المشهد.</div>
+</div>
+</div>
+<div>&lt;divider color=“subtle”/&gt;</div>
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>4. الانعكاس والتناظر</strong></div>
+<div>ابحث عن سطح ماء هادئ يسمح بإظهار الطائر وانعكاسه.</div>
+<div><em>مثال:</em> طائر مالك الحزين واقفاً على حافة الماء، مع انعكاس شبه كامل. جرّب التمركز في المنتصف عندما يخدم التناظر الفكرة.</div>
+</div>
+</div>
+</div>
+<div>التكوين الناجح ليس تطبيق قاعدة محفوظة؛ بل اختيار ما يخدم القصة التي تريد أن يراها المشاهد. &lt;Cite refs={[“turn375088search6”,“turn375088search4”]}/&gt;</div>
+<h2>7. كيف تصوّر سلسلة تحكي قصة؟ Visual Storytelling</h2>
+<div>بدلاً من الاكتفاء بصورة منفردة، حاول بناء سلسلة من ثلاث إلى خمس صور توضح حدثاً طبيعياً.</div>
+<div>مثلاً، قصة طائر يبحث عن الغذاء:</div>
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;gap:0.75rem">
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>الصورة 1 — السياق</strong></div>
+<div>الطائر في بيئته، مع إظهار الماء والضفة.</div>
+</div>
+</div>
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>الصورة 2 — الترقب</strong></div>
+<div>وضعية الجسم والنظر توحيان بالتركيز على الفريسة.</div>
+</div>
+</div>
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>الصورة 3 — الفعل</strong></div>
+<div>حركة الرأس أو الماء هي مركز الاهتمام.</div>
+</div>
+</div>
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>الصورة 4 — النتيجة</strong></div>
+<div>تظهر نتيجة الحدث، إذا أمكن تسجيلها بصورة طبيعية.</div>
+</div>
+</div>
+</div>
+<div>هذه السلسلة تعطي المشاهد سياقاً وتطوراً ونتيجة. وهي مفيدة جداً في مسابقات التصوير التي تهتم بالسرد البصري، بشرط أن تكون الصور أصيلة وألا تتسبب في إزعاج الطائر من أجل استكمال القصة.</div>
+<h2>8. المعالجة الرقمية لصور الطيور</h2>
+<div>&lt;AsyncImageGroup query={[“wildlife bird photograph natural realistic color detailed feathers”,“bird wildlife photograph subtle professional raw editing natural tones”]} aspectRatio=“5:4” layout=“carousel” numPerQuery={1}/&gt;</div>
+<div>المعالجة الجيدة لا تعني جعل الصورة مشبعة بالألوان أو زيادة الحدة إلى أقصى حد؛ بل استعادة التفاصيل وتحسين وضوح الفكرة دون الإضرار بالطابع الطبيعي للصورة.</div>
+<h3>سير عمل مقترح في Lightroom أو Camera Raw</h3>
+<div>&lt;list marker=“number” gap={2}&gt;
+&lt;list-item&gt;<strong>اختيار الصورة:</strong> ابدأ بصورة حادة العين، ذات وضعية مناسبة وخلفية جيدة. لا تحاول إصلاح كل مشكلة بالمعالجة.&lt;/list-item&gt;
+&lt;list-item&gt;<strong>تصحيح التعريض:</strong> عدّل Exposure وHighlights وShadows مع مراقبة تفاصيل الريش الأبيض والأسود.&lt;/list-item&gt;
+&lt;list-item&gt;<strong>توازن اللون الأبيض:</strong> حافظ على لون الريش الطبيعي، خصوصاً عند وجود انعكاس لوني من العشب أو الماء.&lt;/list-item&gt;
+&lt;list-item&gt;<strong>تحسين التباين والملمس:</strong> استخدم Texture وClarity باعتدال، حتى لا يبدو الريش خشناً بصورة مصطنعة.&lt;/list-item&gt;
+&lt;list-item&gt;<strong>تقليل الضجيج:</strong> عالج الضجيج الناتج عن ISO المرتفع مع الحفاظ على تفاصيل الريش الدقيقة.&lt;/list-item&gt;
+&lt;list-item&gt;<strong>الحدة الانتقائية:</strong> أعطِ العين والرأس الأولوية، ولا تجعل الخلفية الحادة تنافس الطائر.&lt;/list-item&gt;
+&lt;list-item&gt;<strong>القص النهائي:</strong> صحّح التكوين إذا لزم، مع الحفاظ على مساحة مناسبة أمام اتجاه النظر أو الطيران.&lt;/list-item&gt;
+&lt;/list&gt;</div>
+<h3>مثال قبل المعالجة وبعدها</h3>
+<div>لنفترض أنك التقطت صورة لطائر صغير في الظل:</div>
+<ul>
+<li>الصورة الأصلية: العين حادة، لكن الطائر مظلم قليلاً والخلفية مزدحمة.</li>
+<li>بعد المعالجة: رفع معتدل للظلال، وتقليل ضجيج مدروس، وتحسين بسيط لتفاصيل العين، وقص يخفف تشتيت الخلفية.</li>
+<li>النتيجة المطلوبة: طائر أوضح مع الاحتفاظ بمظهر طبيعي، لا ريش بلاستيكي أو ألوان مبالغ فيها.</li>
+</ul>
+<div>وفي التصوير التوثيقي أو مسابقات الحياة البرية، راجع قواعد الجهة المنظمة بشأن التعديلات المسموح بها. &lt;Cite refs={[“turn375088search1”,“turn375088search2”]}/&gt;</div>
+<h2>9. تمرين ميداني للمصور متوسط الخبرة</h2>
+<div>إليك خطة عملية لجلسة تصوير مدتها نحو ساعة، مع التركيز على تطوير المهارة وليس عدد الصور.</div>
+<div>{@body const [checks,setChecks] = DIL.useState([false,false,false,false,false,false])}</div>
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;gap:0.75rem">
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:center">
+<div>&lt;title size=“lg”&gt;مهمة ميدانية: طائر واحد، ست تجارب&lt;/title&gt;
+&lt;badge color={checks.every(Boolean)?“success”:“secondary”}&gt;{checks.filter(Boolean).length}/6&lt;/badge&gt;</div>
+</div>
+<div>{#each [{t:“المراقبة دون تصوير”,d:“راقب السلوك واتجاهات الحركة قبل اختيار اللقطة.”},{t:“تغيير زاوية التصوير”,d:“التقط صورة من موقعك ثم غيّر زاويتك قليلاً.”},{t:“تجربة الضوء”,d:“قارن بين الضوء الجانبي والضوء المنتشر إن توافرا.”},{t:“تجربة التكوين”,d:“صوّر الطائر قريباً في الإطار، ثم اترك مساحة أكبر حوله.”},{t:“تسجيل الحركة”,d:“حاول التقاط حركة طبيعية، مثل الالتفات أو فتح الجناحين.”},{t:“المراجعة الفنية”,d:“اختر أفضل صورة بناءً على الحدة والضوء والتكوين واللحظة.”}] as task,i}
+&lt;checkbox checked={checks[i]} onChange={v=&gt;setChecks(old=&gt;old.map((x,j)=&gt;i===j?v:x))} lineThrough={false}&gt;
+&lt;box gap={1}&gt;
+<strong>{i+1}. {task.t}</strong></div>
+<pre><code>  &lt;text color=&quot;secondary&quot; size=&quot;sm&quot;&gt;{task.d}&lt;/text&gt;
+&lt;/box&gt;
+</code></pre>
+<div>&lt;/checkbox&gt;
+{/each}</div>
+</div>
+<div>تذكّر أن تبتعد إذا غيّر الطائر سلوكه بسبب وجودك، ولا تقترب من الأعشاش أو تستخدم وسائل إزعاج لإجباره على الطيران. &lt;Cite refs={[“turn375088search2”,“turn375088search3”]}/&gt;</div>
+<h2>10. تقييم الصورة بعين المصور والمحكّم (Jury)</h2>
+<div>عندما تنتهي من التصوير، قيّم كل صورة على أربعة محاور من 5 درجات:</div>
+<table>
+<thead>
+<tr>
+<th>المعيار</th>
+<th>السؤال الذي تطرحه</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>الجودة التقنية</td>
+<td>هل العين حادة والتعريض مناسب؟</td>
+</tr>
+<tr>
+<td>التكوين</td>
+<td>هل توزيع العناصر والمساحة يخدم الموضوع؟</td>
+</tr>
+<tr>
+<td>اللحظة</td>
+<td>هل وضعية الطائر أو سلوكه مميزة؟</td>
+</tr>
+<tr>
+<td>التأثير البصري</td>
+<td>هل تجذب الصورة المشاهد وتبقى في ذاكرته؟</td>
+</tr>
+</tbody>
+</table>
+<div>المجموع الأقصى 20 درجة، وهو تمرين شخصي للمقارنة بين صورك وليس نظام تحكيم رسمياً.</div>
+<div>قد تحصل صورة على 19/20 تقنياً وفنياً، لكنها لا تثير اهتمامك مثل صورة أخرى أقل كمالاً تقنياً، لكنها تحمل لحظة نادرة أو تكويناً غير مألوف. هنا يبدأ التفكير الفني الحقيقي.</div>
+<hr>
+<h2>ما المجال الذي تريد تطويره بعد هذا المستوى؟</h2>
+<div>{@body const [nextTopic,setNextTopic] = DIL.useState(“flight”)}</div>
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;gap:0.75rem">
+<div>&lt;radio-group value={nextTopic} onChange={setNextTopic} direction=“col”&gt;
+&lt;radio value=“flight”&gt;تصوير الطيور أثناء الطيران — إعدادات وتتبع متقدم&lt;/radio&gt;
+&lt;radio value=“art”&gt;تصوير الطيور بأسلوب Fine Art والتكوين الإبداعي&lt;/radio&gt;
+&lt;radio value=“jury”&gt;تقييم صور الطيور من وجهة نظر لجنة التحكيم&lt;/radio&gt;
+&lt;radio value=“editing”&gt;المعالجة الاحترافية لصور الطيور في Lightroom وPhotoshop&lt;/radio&gt;
+&lt;radio value=“canon”&gt;تطبيق عملي على Canon R7 وإعداداتها لتصوير الطيور&lt;/radio&gt;
+&lt;/radio-group&gt;
+&lt;button block onClick={() =&gt; GenUI.issueNewTurn(&quot;أعطني درساً تفصيلياً باللغة العربية للمصور متوسط الخبرة عن: &quot;+({“flight”:“تصوير الطيور أثناء الطيران مع إعدادات الكاميرا والتتبع وأمثلة عملية”,“art”:“تصوير الطيور بأسلوب Fine Art والتكوين الإبداعي مع أمثلة”,“jury”:“تقييم صور الطيور من وجهة نظر لجنة التحكيم مع أمثلة وتحليل فني”,“editing”:“المعالجة الاحترافية لصور الطيور في Lightroom وPhotoshop مع أمثلة عملية”,“canon”:“إعداد Canon EOS R7 لتصوير الطيور خطوة بخطوة مع أمثلة تطبيقية”}[nextTopic]))}&gt;متابعة الدرس المختار&lt;/button&gt;</div>
+</div>
+<h3>مراجع موصى بها للتعلم</h3>
+<ul>
+<li>&lt;Entity value=“Cornell Lab of Ornithology” category=“organization”/&gt; — <a href="https://www.allaboutbirds.org/news/how-to-photograph-birds-in-flight/">How to Photograph Birds in Flight</a>: تقنيات تتبع الطيور الطائرة وسرعة الغالق.</li>
+<li>&lt;Entity value=“Audubon” category=“organization” disambig=“منظمة حماية الطيور والطبيعة”/&gt; — <a href="https://www.audubon.org/photography/how-tos">Photography Tips and How-Tos</a>: التكوين والإضاءة والتعريض والمعالجة.</li>
+<li>&lt;Entity value=“Canon” category=“brand” disambig=“شركة تصنيع الكاميرات والتصوير”/&gt; — <a href="https://cam.start.canon/en/C005/manual/html/UG-05_AF-Drive_0070.html">دليل التركيز التلقائي لكاميرا EOS R7</a>: تتبع الموضوع واكتشاف عين الحيوان.</li>
+</ul>
+<div class="message-time">10/27/2026, 1:31:15 PM</div></div></div><div class="message right"><div class="message-avatar">U</div><div class="message-content"><div>أعطني المزيد عن تصوير الطيور
+الخبير
+مع الأمثلة</div>
+<div class="message-time">10/27/2026, 1:33:00 PM</div></div></div><div class="message left"><div class="message-avatar">AI</div><div class="message-content"><h1>فن تصوير الطيور للمصور الخبير</h1>
+<div><em>Advanced Bird Photography — من إتقان التقنية إلى الرؤية الفنية وبناء الصورة الاستثنائية</em></div>
+<div>&lt;AsyncImageGroup query={[“kingfisher diving into water high speed wildlife photography perfect action moment”,“eagle in flight dramatic backlight fine art wildlife photography”,“owl in forest low key wildlife portrait atmospheric photography”,“flamingos minimalist reflection abstract wildlife fine art photography”]} aspectRatio=“5:4” layout=“bento” numPerQuery={1}/&gt;</div>
+<div>في مستوى الخبير، لا يعود السؤال الأساسي: كيف أحصل على صورة حادة للطائر؟ بل يصبح:</div>
+<div><strong>كيف أصنع صورة لا يستطيع مشاهدتها بالطريقة نفسها إلا من خلال رؤيتي أنا؟</strong></div>
+<div>قد يمتلك مصوران الكاميرا نفسها والعدسة نفسها ويقفان في الموقع ذاته، ومع ذلك ينتج أحدهما صورة توثيقية جيدة، بينما ينتج الآخر صورة استثنائية. الفارق ليس تقنياً فقط، بل يكمن في التوقع، وفهم السلوك، وإدارة الضوء، وتوقيت اللحظة، والقدرة على اتخاذ قرارات بصرية مقصودة.</div>
+<div>سنتناول تصوير الطيور هنا من ست زوايا مترابطة:</div>
+<ul>
+<li>الخبير التقني الذي يتحكم في الكاميرا.</li>
+<li>عالم السلوك الذي يتوقع الحدث.</li>
+<li>المصور الذي يصوغ الضوء والحركة.</li>
+<li>الفنان الذي يبني معنى بصرياً.</li>
+<li>المحرر الذي يختار الصورة الأقوى من بين عشرات الصور.</li>
+<li>المحكّم الذي يميز بين الإتقان التقني والتميّز الفوتوغرافي.</li>
+</ul>
+<h2>1. التفكير الاستباقي: تصوير اللحظة التي تسبق الحدث</h2>
+<div>أحد أهم الفروق بين المصور المتمرس والمصور الخبير هو أن الخبير لا يكتفي بمتابعة ما يحدث؛ بل يحاول التنبؤ بما قد يحدث بعد ثوانٍ.</div>
+<h3>مثال: صيد طائر الرفراف</h3>
+<div>لنفترض أنك تراقب طائر رفراف يصطاد في بركة ضحلة.</div>
+<div>يمكنك بناء خطة تصوير مسبقة:</div>
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;gap:0.75rem">
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>المرحلة الأولى — قراءة السلوك</strong></div>
+<div>راقب اتجاه النظر، وموضع الوقوف، وتكرار العودة إلى الغصن نفسه. اختر زاوية تُظهر الطائر والماء المتوقع أن يغوص فيه.</div>
+</div>
+</div>
+<div>&lt;divider color=“subtle”/&gt;</div>
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>المرحلة الثانية — تجهيز الإطار</strong></div>
+<div>لا تنتظر حتى يبدأ الغوص لتغيير الإعدادات. حدد مسبقاً منطقة الحركة المتوقعة، واضبط التركيز المستمر والتصوير المتتابع.</div>
+</div>
+</div>
+<div>&lt;divider color=“subtle”/&gt;</div>
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>المرحلة الثالثة — البحث عن اللحظة المكتملة</strong></div>
+<div>قد تكون الصورة الأقوى عند دخول الماء، أو الخروج منه، أو ظهور السمكة في المنقار. لكل لحظة قيمة بصرية مختلفة.</div>
+</div>
+</div>
+</div>
+<h3>ما الذي يفعله الخبير بشكل مختلف؟</h3>
+<div>بدلاً من إطلاق سلسلة طويلة من الصور دون خطة، يسأل نفسه:</div>
+<ul>
+<li>أين أتوقع أن يحدث الفعل؟</li>
+<li>من أي اتجاه سيأتي الضوء؟</li>
+<li>ما الخلفية التي ستظهر خلف الطائر؟</li>
+<li>هل أريد تجميد الحركة أم إظهارها؟</li>
+<li>هل أفضّل لقطة قريبة أم لقطة أوسع تحكي الحدث؟</li>
+</ul>
+<div>هذه الأسئلة تحول التصوير من رد فعل سريع إلى <strong>قرار بصري استباقي</strong>.</div>
+<hr>
+<h2>2. التقنية المتقدمة: التحكم في الحركة لا مجرد تجميدها</h2>
+<div>&lt;AsyncImageGroup query={[“eagle wings spread in flight crisp feather detail wildlife photography”,“bird flying with deliberate motion blur artistic panning photography”,“hummingbird hovering wings motion wildlife photograph”]} aspectRatio=“5:4” layout=“carousel” numPerQuery={1}/&gt;</div>
+<div>يستطيع الخبير استخدام سرعة الغالق لتشكيل الإحساس بالحركة، لا لتجميدها فحسب.</div>
+<div>هناك ثلاث نتائج مختلفة يمكن أن تسعى إليها:</div>
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;gap:0.25rem">
+<div><strong>أ. التجميد الكامل (Motion Freezing)</strong></div>
+<div>الهدف هو إيقاف الحركة بصرياً، بما في ذلك تفاصيل الجناح وقطرات الماء عند الحاجة.</div>
+<div>مثال: تصوير طائر جارح أثناء الانقضاض بسرعة 1/3200 ثانية أو أعلى بحسب سرعة الحركة والضوء. قد تكون هذه السرعة ضرورية، لكنها لا تضمن وحدها نجاح الصورة؛ فدقة التتبع واتجاه الحركة يظلان حاسمين.</div>
+</div>
+<div>&lt;divider color=“subtle”/&gt;</div>
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;gap:0.25rem">
+<div><strong>ب. تجميد الجسم مع السماح بحركة الجناحين</strong></div>
+<div>في بعض الصور، يكون من المفيد أن تبقى العين والرأس واضحين بينما تظهر الأجنحة بدرجة من الحركة.</div>
+<div>مثال: طائر يرفرف بجناحيه أثناء الهبوط. يمكن لسرعة أبطأ نسبياً أن تضيف إحساساً بالحركة، لكن النتيجة تعتمد على سرعة الجناحين وإضاءة المشهد.</div>
+</div>
+<div>&lt;divider color=“subtle”/&gt;</div>
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;gap:0.25rem">
+<div><strong>ج. تتبع الحركة (Panning)</strong></div>
+<div>تحرّك الكاميرا بالتزامن مع اتجاه الطائر، بحيث يبقى الجسم أقرب إلى الحدة بينما تتحول الخلفية إلى خطوط حركة.</div>
+<div>مثال: طائر يطير بمحاذاة ضفة خضراء. جرّب سرعة 1/125 إلى 1/500 ثانية بحسب سرعة الطائر، ثم عدّلها تدريجياً. هذه تقنية تحتاج إلى التجربة، وقد تنتج عدداً كبيراً من الصور غير الحادة قبل الحصول على نتيجة ناجحة.</div>
+</div>
+</div>
+<h3>تمرين خبير: ثلاثة تعبيرات للحركة</h3>
+<div>صوّر المشهد نفسه، إذا توافرت الفرصة، بثلاث سرعات مختلفة. لا تقارن الحدة فقط، بل اسأل:</div>
+<ol>
+<li>أي صورة تنقل قوة الحركة؟</li>
+<li>أي صورة تجعل الحركة تبدو رشيقة؟</li>
+<li>أي صورة تجمع بين الوضوح والإحساس بالزمن؟</li>
+</ol>
+<div><strong>النتيجة المهمة:</strong> السرعة الأعلى ليست دائماً الخيار الفني الأفضل؛ إنها الخيار الأنسب عندما تخدم المعنى الذي تريد بناءه.</div>
+<h2>3. هندسة الضوء: كيف تجعل الضوء جزءاً من القصة؟</h2>
+<div>&lt;AsyncImageGroup query={[“backlit heron glowing translucent wing feathers golden hour wildlife photography”,“black bird silhouette against pale sunrise minimalist fine art photography”,“owl in forest dramatic side lighting detailed feather texture wildlife portrait”]} aspectRatio=“5:4” layout=“bento” numPerQuery={1}/&gt;</div>
+<div>المصور الخبير لا يسأل فقط: هل الضوء كافٍ؟ بل يسأل: <strong>ما الدور الذي أريد من الضوء أن يؤديه داخل الصورة؟</strong></div>
+<div>يمكن أن يكشف الضوء التفاصيل، أو يخفيها، أو يصنع حدوداً مضيئة، أو يحول الطائر إلى شكل رمزي.</div>
+<h3>الحالة الأولى: الإضاءة الخلفية Backlighting</h3>
+<div>عندما يكون الضوء خلف الطائر، يمكنك استخدامه لإظهار حواف الريش، أو إنتاج صورة ظلية، أو إبراز شفافية بعض الريش الرقيق.</div>
+<div><strong>مثال تطبيقي:</strong> طائر أبيض يفتح جناحيه عند شروق الشمس.</div>
+<ul>
+<li>إذا أردت تفاصيل الريش، عرّض الصورة بما يحافظ على التفاصيل في المناطق المضيئة، واستخدم قياس التعريض ومراجعة المدرج التكراري.</li>
+<li>إذا أردت صورة ظلية، اجعل جسم الطائر أغمق بوضوح من الخلفية، وراقب شكل الرأس والمنقار والأجنحة.</li>
+<li>إذا أردت صورة فنية، ابحث عن فصل واضح بين شكل الطائر والخلفية، وتجنب العناصر التي تتداخل مع محيطه.</li>
+</ul>
+<h3>الحالة الثانية: الضوء الجانبي Side Lighting</h3>
+<div>يبرز ملمس الريش وتدرجات الجسم، ويخلق فرقاً بين الجانب المضاء والجانب المظلل.</div>
+<div><strong>مثال:</strong> بومة ذات ريش كثيف في غابة. الضوء الجانبي الناعم قد يكشف تفاصيل الوجه والريش دون أن يجعل الصورة مسطحة.</div>
+<h3>الحالة الثالثة: الضوء المنتشر Diffused Light</h3>
+<div>في الأيام الغائمة، تكون الظلال غالباً أقل حدة، وهو ما يساعد في تصوير الطيور ذات الريش الأبيض أو التفاصيل الدقيقة.</div>
+<div><strong>مثال:</strong> طائر مالك الحزين الأبيض على ضفة ماء رمادية. يمكن أن يكون التباين المنخفض جزءاً من المعالجة الفنية، بدلاً من محاولة جعل كل شيء شديد التباين.</div>
+<h3>تمرين الخبير: ثلاثة قرارات ضوئية</h3>
+<div>صوّر الموضوع نفسه عندما يسمح الضوء بذلك:</div>
+<ul>
+<li>صورة تكشف أكبر قدر ممكن من تفاصيل الريش.</li>
+<li>صورة تعتمد على الظلال والتباين.</li>
+<li>صورة تختزل الطائر إلى شكل واضح أمام الضوء.</li>
+</ul>
+<div>قارن الصور الثلاث. أنت لا تغيّر التعريض فقط؛ بل تغيّر اللغة البصرية التي تتحدث بها الصورة.</div>
+<hr>
+<h2>4. التكوين الخبير: متى تكسر القواعد عمداً؟</h2>
+<div>&lt;AsyncImageGroup query={[“minimalist single bird tiny subject large empty pale sky fine art wildlife photography”,“flamingos repeating patterns aerial wildlife photography abstract composition”,“two birds separated by large negative space minimalist fine art photograph”,“bird silhouette on curved branch graphic composition wildlife art”]} aspectRatio=“5:4” layout=“bento” numPerQuery={1}/&gt;</div>
+<div>في المستوى المتقدم، لا تصبح قاعدة الأثلاث غير مهمة، ولكنك لا تعود مضطراً إلى استخدامها في كل صورة. يصبح السؤال: ما العلاقة البصرية التي تريد خلقها؟</div>
+<h3>أ. التكوين القائم على الفراغ</h3>
+<div>قد يشغل الطائر 10% فقط من مساحة الصورة، بينما يشغل الفراغ بقية الإطار.</div>
+<div><strong>مثال:</strong> طائر منفرد على صخرة أمام ضباب واسع.</div>
+<div>إذا كان الهدف هو الإحساس بالوحدة أو الاتساع، فقد تكون الصورة الواسعة أكثر تأثيراً من صورة قريبة مليئة بالتفاصيل.</div>
+<h3>ب. التكرار والإيقاع البصري</h3>
+<div>عندما تصور سرباً من الطيور، تصبح العلاقة بين الأشكال مهمة بقدر أهمية كل طائر منفرد.</div>
+<div><strong>مثال:</strong> مجموعة من طيور الفلامنغو على الماء. يمكنك التركيز على تكرار الرقاب والأرجل وانعكاساتها حتى يتحول المشهد إلى تكوين شبه تجريدي.</div>
+<h3>ج. التوتر البصري</h3>
+<div>يمكن خلق التوتر بترك مسافة غير متوازنة بين الطائر وحافة الصورة، أو بوضعه قرب أحد الأطراف.</div>
+<div>لكن يجب أن يكون هذا القرار مقصوداً. فإذا شعر المشاهد بأن الطائر على وشك الخروج من الإطار، فقد يخدم ذلك فكرة الحركة أو القلق؛ أما إذا بدا القطع عشوائياً، فقد يضعف الصورة.</div>
+<h3>د. العلاقة بين الشكل والخلفية</h3>
+<div>راقب محيط الطائر، لا جسمه فقط.</div>
+<div>اسأل نفسك:</div>
+<ul>
+<li>هل يتداخل المنقار مع غصن؟</li>
+<li>هل تقع بقعة مضيئة خلف الرأس؟</li>
+<li>هل تنفصل الأجنحة عن الخلفية بوضوح؟</li>
+<li>هل يمكنني التحرك جانبياً لتبسيط الشكل؟</li>
+</ul>
+<div><strong>قاعدة الخبير:</strong> أحياناً تكون الخطوة الأفضل هي تغيير موقعك نصف متر، لا تغيير العدسة أو إعدادات الكاميرا.</div>
+<hr>
+<h2>5. تصوير الطيور بأسلوب Fine Art: من التسجيل إلى الرؤية الفنية</h2>
+<div>&lt;AsyncImageGroup query={[“minimalist black bird silhouette on delicate branch muted background fine art wildlife photography”,“white egret in mist monochrome fine art wildlife photography”,“flamingos abstract reflections pastel fine art wildlife photography”,“owl dark moody woodland portrait fine art wildlife photography”]} aspectRatio=“5:4” layout=“carousel” numPerQuery={1}/&gt;</div>
+<div>التصوير الفني للطيور لا يعني بالضرورة إضافة تأثيرات رقمية قوية. قد تنشأ الصورة الفنية من قرار اتخذته قبل التصوير: اختيار خلفية، أو توقيت، أو زاوية، أو علاقة غير مألوفة بين الطائر والفراغ.</div>
+<h3>أربعة اتجاهات فنية مع أمثلة</h3>
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;gap:0.75rem">
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>1. الاختزال البصري (Minimalism)</strong></div>
+<div>قلّل العناصر إلى طائر وغصن ومساحة واسعة.</div>
+<div><em>الفكرة:</em> قوة الصورة تأتي من بساطتها، لا من كثرة التفاصيل.</div>
+<div><em>التطبيق:</em> اختر خلفية خالية من الأغصان المتقاطعة، واستعمل مساحة سلبية واسعة مع ضبط موضع الطائر بعناية.</div>
+</div>
+</div>
+<div>&lt;divider color=“subtle”/&gt;</div>
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>2. المعالجة أحادية اللون (Monochrome)</strong></div>
+<div>ركّز على الشكل والملمس والتباين بدلاً من اللون.</div>
+<div><em>الفكرة:</em> تحويل الانتباه من لون الريش إلى خطوط الجناح والانعكاس وبنية المشهد.</div>
+<div><em>التطبيق:</em> اختر صورة ذات تدرجات ضوئية غنية، ثم اختبر تحويلها إلى الأبيض والأسود مع الحفاظ على تفاصيل الظلال.</div>
+</div>
+</div>
+<div>&lt;divider color=“subtle”/&gt;</div>
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>3. التجريد (Abstraction)</strong></div>
+<div>اجعل الانعكاسات والأشكال والألوان هي الموضوع الأساسي، مع تقليل أهمية التعرف على النوع.</div>
+<div><em>الفكرة:</em> يمكن للمشاهد أن يرى إيقاعاً بصرياً قبل أن يتعرف على الطائر.</div>
+<div><em>التطبيق:</em> صوّر انعكاس مجموعة طيور في الماء، وابحث عن أنماط متكررة أو أشكال منحنية.</div>
+</div>
+</div>
+<div>&lt;divider color=“subtle”/&gt;</div>
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>4. الأسلوب الدرامي (Low-Key)</strong></div>
+<div>استخدم الخلفية الداكنة والضوء المحدود لتوجيه الانتباه إلى الوجه أو العين أو جزء من الريش.</div>
+<div><em>الفكرة:</em> إظهار ما هو مهم بصرياً، وترك بقية المشهد أقل حضوراً.</div>
+<div><em>التطبيق:</em> اختر خلفية داكنة طبيعية، وراقب تفاصيل الريش في الظلال حتى لا تتحول إلى كتلة سوداء بلا معلومات.</div>
+</div>
+</div>
+</div>
+<h3>كيف تعرف أن المعالجة الفنية نجحت؟</h3>
+<div>اسأل ثلاثة أسئلة:</div>
+<ol>
+<li>هل تخدم المعالجة فكرة واضحة؟</li>
+<li>هل ما زال الطائر والعناصر الأساسية مقروءة بصرياً؟</li>
+<li>هل يمكن حذف تأثير ما دون أن تفقد الصورة معناها أو قوتها؟</li>
+</ol>
+<div>إذا كانت الإجابة عن السؤال الثالث نعم، فقد يكون التأثير زائداً عن الحاجة.</div>
+<h2>6. اختيار العدسة والمسافة: لماذا لا تكون الصورة الأقرب دائماً الأفضل؟</h2>
+<div>&lt;AsyncImageGroup query={[“wildlife bird portrait long telephoto lens smooth green bokeh background”,“bird in wide natural landscape photographed from distance habitat environmental portrait”,“bird framed by foreground leaves telephoto wildlife photography”]} aspectRatio=“5:4” layout=“carousel” numPerQuery={1}/&gt;</div>
+<div>يستطيع المصور الخبير استخدام المسافة والعدسة لتحديد العلاقة بين الطائر والبيئة، وليس فقط لتكبير الموضوع.</div>
+<h3>ثلاث مقاربات مختلفة</h3>
+<table>
+<thead>
+<tr>
+<th>المقاربة</th>
+<th>الهدف الفني</th>
+<th>مثال</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>لقطة قريبة</td>
+<td>إبراز العين والريش والشخصية</td>
+<td>بومة في صورة شخصية</td>
+</tr>
+<tr>
+<td>لقطة متوسطة</td>
+<td>الجمع بين الطائر والفرع أو سطح الماء</td>
+<td>رفراف على غصن فوق البركة</td>
+</tr>
+<tr>
+<td>لقطة واسعة</td>
+<td>إظهار البيئة والعلاقة بالمكان</td>
+<td>طائر صغير وسط أرض رطبة واسعة</td>
+</tr>
+</tbody>
+</table>
+<div>إذا كنت تستخدم Canon R7، فحساسها من فئة APS-C يمنح العدسات مجال رؤية أضيق مقارنة بكاميرا كاملة الإطار عند استخدام العدسة نفسها. وهذا مفيد لتصوير الطيور البعيدة، لكنه لا يغير البعد البؤري الحقيقي للعدسة ولا يعوض نقص التفاصيل الناتج عن المسافة أو الضباب الجوي.</div>
+<h3>مثال: عدسة 400 مم</h3>
+<div>تخيل أنك تستخدم عدسة 400 مم لتصوير طائر على غصن.</div>
+<ul>
+<li>إذا اقتربت بصرياً إلى أقصى حد، فقد تفقد جزءاً من البيئة التي تساعد في تكوين القصة.</li>
+<li>إذا ابتعدت قليلاً، فقد تحصل على تكوين أوسع يربط الطائر بالغصن والخلفية.</li>
+<li>إذا وضعت أوراقاً بعيدة في مقدمة المشهد، فقد تصنع إطاراً طبيعياً حول الطائر، بشرط ألا تحجب العين أو تتداخل مع الرأس بصورة مشتتة.</li>
+</ul>
+<div>إذن، لا تسأل فقط: ما أطول عدسة أستطيع استخدامها؟ بل اسأل: <strong>ما المسافة والبعد البؤري اللذان يخدمان الصورة التي أريدها؟</strong></div>
+<h2>7. إدارة الجلسة الميدانية: كيف تعمل مثل المحترفين؟</h2>
+<div>المصور الخبير لا يقضي الجلسة كلها في التقاط الصور. إنه يوزع وقته بين البحث والمراقبة والتصوير والتقييم.</div>
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;gap:0.75rem">
+<div>&lt;title size=“lg”&gt;سير عمل مقترح لجلسة تصوير مدتها 3 ساعات&lt;/title&gt;</div>
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;align-items:center">
+<div>&lt;icon name=“map-pin” size=“xl”/&gt;
+&lt;text weight=“medium” size=“sm”&gt;30 دقيقة&lt;/text&gt;</div>
+</div>
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>المرحلة الأولى: استطلاع الموقع</strong></div>
+<div>افحص اتجاه الضوء والخلفيات ومسارات الحركة المحتملة. اختر موقعاً يسمح لك بالتصوير دون إزعاج الطيور.</div>
+</div>
+</div>
+<div>&lt;divider color=“subtle”/&gt;</div>
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;align-items:center">
+<div>&lt;icon name=“eye” size=“xl”/&gt;
+&lt;text weight=“medium” size=“sm”&gt;30 دقيقة&lt;/text&gt;</div>
+</div>
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>المرحلة الثانية: المراقبة</strong></div>
+<div>راقب سلوك الطيور وحدد أكثر الأماكن التي تعود إليها، من دون افتراض أن الحركة ستتكرر في توقيت محدد.</div>
+</div>
+</div>
+<div>&lt;divider color=“subtle”/&gt;</div>
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;align-items:center">
+<div>&lt;icon name=“camera” size=“xl”/&gt;
+&lt;text weight=“medium” size=“sm”&gt;90 دقيقة&lt;/text&gt;</div>
+</div>
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>المرحلة الثالثة: التصوير المقصود</strong></div>
+<div>خصص محاولات منفصلة لصورة شخصية، وصورة في البيئة، وصورة حركة. تجنب تغيير جميع المتغيرات في وقت واحد.</div>
+</div>
+</div>
+<div>&lt;divider color=“subtle”/&gt;</div>
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;align-items:center">
+<div>&lt;icon name=“images” size=“xl”/&gt;
+&lt;text weight=“medium” size=“sm”&gt;30 دقيقة&lt;/text&gt;</div>
+</div>
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>المرحلة الرابعة: مراجعة أولية</strong></div>
+<div>راجع الصور بحثاً عن أخطاء التركيز والتعريض والتكوين، وسجّل ما تريد تغييره في الجلسة التالية.</div>
+</div>
+</div>
+</div>
+<div>هذه خطة مرنة وليست جدولاً إلزامياً. إذا ظهرت فرصة نادرة، فقد يكون من المنطقي تخصيص وقت أطول لمراقبتها وتصويرها.</div>
+<h2>8. كيف تختار أفضل صورة من بين 500 لقطة؟</h2>
+<div>&lt;AsyncImageGroup query={[“bird wings raised symmetrical flight pose wildlife photography”,“bird wings partially folded landing moment wildlife photography”,“bird taking off branch dynamic wing position wildlife photography”]} aspectRatio=“5:4” layout=“carousel” numPerQuery={1}/&gt;</div>
+<div>هنا يظهر أحد أهم الفروق بين المصور الجيد والمصور الخبير: <strong>القدرة على تحرير الصور وانتقاء الصورة الأقوى، لا مجرد إنتاج عدد كبير منها.</strong></div>
+<div>تخيل أنك التقطت 500 صورة لطائر يهبط على غصن. قد تكون 100 منها حادة تقنياً، لكن خمس صور فقط تعرض وضعية جناحين جيدة، وربما صورتان تحملان تكويناً مميزاً.</div>
+<h3>عملية الفرز في أربع مراحل</h3>
+<div>&lt;list marker=“number” gap={2}&gt;
+&lt;list-item&gt;<strong>الفرز التقني:</strong> استبعد الصور التي لا يمكن إنقاذها بسبب خطأ التركيز أو اهتزاز شديد أو فقدان تفاصيل مهمة.&lt;/list-item&gt;
+&lt;list-item&gt;<strong>فرز اللحظة:</strong> قارن وضعيات الرأس والأجنحة واتجاه النظر والتفاعل مع البيئة.&lt;/list-item&gt;
+&lt;list-item&gt;<strong>فرز التكوين:</strong> قارن المساحة السلبية والخلفية والقص وتداخل العناصر.&lt;/list-item&gt;
+&lt;list-item&gt;<strong>الاختيار النهائي:</strong> ضع أفضل صورتين أو ثلاث جنباً إلى جنب، ثم اختر الصورة التي تجمع بين الجودة التقنية واللحظة والتكوين والتأثير.&lt;/list-item&gt;
+&lt;/list&gt;</div>
+<h3>مثال تحليلي</h3>
+<div>لديك ثلاث صور لطائر أثناء الهبوط:</div>
+<ul>
+<li>الصورة A: العين حادة جداً، لكن الجناحين مطويان بطريقة غير جذابة.</li>
+<li>الصورة B: الحدة جيدة، والجناحان مفتوحان، والخلفية هادئة.</li>
+<li>الصورة C: الطائر حاد، لكن غصناً يتداخل مع الرأس.</li>
+</ul>
+<div>قد تكون الصورة B أقوى من الناحية الفنية، حتى لو كانت الصورة A أكثر حدة قليلاً.</div>
+<div>لا تجعل التكبير بنسبة 100% يحسم قرارك وحده. افحص الصورة بالحجم الذي ستُعرض أو تُطبع به، ثم قيّم تأثيرها ككل.</div>
+<hr>
+<h2>9. المعالجة الاحترافية: بناء ملف نهائي يحافظ على التفاصيل</h2>
+<div>&lt;AsyncImageGroup query={[“wildlife bird feather details natural colors professional photography”,“bird eye and feather detail macro wildlife photography”]} aspectRatio=“5:4” layout=“carousel” numPerQuery={1}/&gt;</div>
+<div>المعالجة المتقدمة ليست سباقاً لزيادة الحدة والوضوح. هدفها أن تجعل العناصر المهمة واضحة مع الحفاظ على انتقالات لونية طبيعية.</div>
+<h3>سير العمل المتقدم</h3>
+<div><strong>أولاً — المعالجة العامة</strong></div>
+<ul>
+<li>ضبط توازن اللون الأبيض.</li>
+<li>تصحيح التعريض والتباين.</li>
+<li>استعادة تفاصيل الإضاءات والظلال بقدر ما يسمح به الملف.</li>
+<li>التحقق من عدم وجود انحراف لوني غير مرغوب.</li>
+</ul>
+<div><strong>ثانياً — المعالجة الموضعية</strong></div>
+<ul>
+<li>تحسين وضوح العين باعتدال.</li>
+<li>إبراز تفاصيل الرأس والريش عند الحاجة.</li>
+<li>تخفيف تشتيت الخلفية دون خلق هالات حول الطائر.</li>
+<li>معالجة الضجيج بطريقة تراعي اختلاف التفاصيل بين الجسم والخلفية.</li>
+</ul>
+<div><strong>ثالثاً — المعالجة النهائية</strong></div>
+<ul>
+<li>اختيار نسبة القص التي تخدم التكوين.</li>
+<li>فحص الحواف بحثاً عن هالات أو آثار قص غير طبيعي.</li>
+<li>ضبط الحدة بحسب حجم الإخراج.</li>
+<li>معاينة الصورة على شاشة مناسبة، وعند الإمكان تجربة نسخة مطبوعة.</li>
+</ul>
+<h3>مثال: صورة لطائر داكن في غابة</h3>
+<div>إذا رفعت الظلال بشدة، فقد تكشف تفاصيل الجسم، لكنك قد تجعل الخلفية الرمادية المسطحة تفقد عمقها. وإذا خفضت التعريض كثيراً، فقد يصبح الطائر كتلة سوداء.</div>
+<div>الحل ليس الوصول إلى سطوع متساوٍ في كل مكان، بل الاحتفاظ بالتدرج الذي يوجه العين إلى الطائر.</div>
+<div>في صور الحياة البرية التوثيقية، يجب أيضاً الالتزام بقواعد المسابقة أو الجهة الناشرة بشأن الإزالة والإضافة والمعالجة المسموح بها. أما في العمل الفني الإبداعي، فيمكن اعتماد معالجة أكثر تحرراً مع توضيح طبيعة العمل عندما يكون ذلك مطلوباً.</div>
+<h2>10. تقييم صورة الطيور من منظور لجنة التحكيم (Jury Perspective)</h2>
+<div>&lt;AsyncImageGroup query={[“eagle flying toward camera wings symmetrical dramatic wildlife competition photography”,“small bird isolated on branch elegant fine art wildlife photograph”,“bird catching fish water droplets peak action wildlife photography”]} aspectRatio=“5:4” layout=“carousel” numPerQuery={1}/&gt;</div>
+<div>عندما تنظر لجنة تحكيم إلى صورة طائر، فإنها لا تبحث بالضرورة عن أغلى عدسة أو أندر نوع من الطيور. ما يهم هو مدى نجاح الصورة في تقديم تجربة بصرية متكاملة.</div>
+<div>يمكننا تدريب أنفسنا على خمسة محاور للتقييم:</div>
+<table>
+<thead>
+<tr>
+<th>المحور</th>
+<th>ما الذي يميز الصورة؟</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>الجودة التقنية</td>
+<td>حدة مناسبة، وتعريض مدروس، وتفاصيل محفوظة</td>
+</tr>
+<tr>
+<td>التكوين</td>
+<td>توزيع متوازن أو غير مألوف لكنه مقصود</td>
+</tr>
+<tr>
+<td>اللحظة</td>
+<td>وضعية أو حركة أو تفاعل مميز</td>
+</tr>
+<tr>
+<td>الأصالة</td>
+<td>معالجة أو رؤية أو زاوية تقدم شيئاً مختلفاً</td>
+</tr>
+<tr>
+<td>التأثير البصري</td>
+<td>صورة تجذب الانتباه وتحتفظ به</td>
+</tr>
+</tbody>
+</table>
+<h3>مثال: مقارنة ثلاث صور افتراضية</h3>
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;gap:0.75rem">
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>الصورة الأولى: صورة شخصية ممتازة</strong></div>
+<div>العين حادة والريش واضح والخلفية جميلة، لكن وضعية الطائر مألوفة.</div>
+<div><strong>التقييم التدريبي:</strong> ممتازة تقنياً، لكن تميزها الفني يعتمد على التفاصيل الدقيقة في التكوين والضوء.</div>
+</div>
+</div>
+<div>&lt;divider color=“subtle”/&gt;</div>
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>الصورة الثانية: لحظة قوية</strong></div>
+<div>الطائر يهبط بجناحين مفتوحين، مع وضوح جيد وخلفية لا تشتت الانتباه.</div>
+<div><strong>التقييم التدريبي:</strong> تجمع بين الحركة والتكوين والجودة التقنية، ولذلك قد تكون أكثر جاذبية بصرياً.</div>
+</div>
+</div>
+<div>&lt;divider color=“subtle”/&gt;</div>
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>الصورة الثالثة: رؤية فنية مميزة</strong></div>
+<div>الطائر صغير وسط مساحة واسعة من الضباب، مع اختزال متعمد للتفاصيل.</div>
+<div><strong>التقييم التدريبي:</strong> قد تكون الأقل تفصيلاً، لكنها قد تكون الأكثر تميزاً إذا كان الفراغ والضوء يخدمان فكرة واضحة.</div>
+</div>
+</div>
+</div>
+<div>هذه أمثلة تعليمية وليست حكماً على صور أصلية بعينها. والدرس الأساسي هو أن <strong>التميز لا يساوي الحدة وحدها، كما أن الغرابة وحدها لا تجعل الصورة ناجحة</strong>.</div>
+<h2>11. أخلاقيات تصوير الطيور على مستوى الخبير</h2>
+<div>كلما ازدادت خبرة المصور، ازدادت مسؤوليته تجاه الموضوع الذي يصوره.</div>
+<ul>
+<li>لا تستخدم طُعماً أو أصواتاً مسجلة بطريقة تزعج الطيور أو تغير سلوكها الطبيعي.</li>
+<li>تجنب إزعاج الأعشاش أو إجبار الطيور على الطيران للحصول على لقطة.</li>
+<li>احترم مسافات الأمان، خاصة مع الطيور الجارحة والأنواع الحساسة.</li>
+<li>لا تنشر مواقع دقيقة لأعشاش الأنواع المهددة أو المواقع الحساسة.</li>
+<li>إذا كنت تعمل في محمية أو مسابقة، التزم بالقواعد الخاصة بالمكان وبأصالة الصورة.</li>
+</ul>
+<div>الصورة الاستثنائية ليست مبرراً لتعريض الطائر للخطر.</div>
+<hr>
+<h2>12. مشروع تطبيقي للخبير: اصنع مجموعة من خمس صور مترابطة</h2>
+<div>بدلاً من الخروج بهدف التقاط أفضل صورة منفردة، جرّب بناء مشروع قصير بعنوان:</div>
+<div><strong>«الطائر والزمن: من السكون إلى الحركة»</strong></div>
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;gap:0.75rem">
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>الصورة 1 — السكون</strong></div>
+<div>صورة شخصية أو مشهد هادئ يعرّف المشاهد بالطائر.</div>
+</div>
+</div>
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>الصورة 2 — الترقب</strong></div>
+<div>ركز على اتجاه الرأس ووضعية الجسم، وعلى ما قد يسبق الحركة.</div>
+</div>
+</div>
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>الصورة 3 — التحول</strong></div>
+<div>التقط لحظة فتح الجناحين أو تغيير وضعية الجسم.</div>
+</div>
+</div>
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>الصورة 4 — الحركة</strong></div>
+<div>اجعل اتجاه الطيران والمساحة المحيطة جزءاً من التكوين.</div>
+</div>
+</div>
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>الصورة 5 — الأثر</strong></div>
+<div>صورة ختامية مستقلة بصرياً، قد يكون فيها الطائر بعيداً أو محاطاً بمساحة واسعة.</div>
+</div>
+</div>
+</div>
+<div>ليس مطلوباً أن تصور هذه الصور بالترتيب أو أن تجبر الطائر على تنفيذ سلوك معين. اجمع الصور على امتداد جلسات متعددة إذا لزم الأمر، ثم اختر الصور التي تنسجم بصرياً وتروي قصة طبيعية.</div>
+<div>قيّم المجموعة بعد الانتهاء:</div>
+<ul>
+<li>هل لكل صورة دور مختلف؟</li>
+<li>هل هناك صورة يمكن حذفها دون التأثير في القصة؟</li>
+<li>هل تتناسق الصور في الضوء والألوان، أم أن الاختلاف بينها يخدم السرد؟</li>
+<li>هل المجموعة أقوى من مجموع صورها المنفردة؟</li>
+</ul>
+<h2>13. الخلاصة: ما الذي يميز مصور الطيور الخبير؟</h2>
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;gap:0.5rem">
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.5rem">
+<div>&lt;icon name=“check-circle” size=“lg”/&gt;
+<strong>يتوقع الحدث</strong> بدلاً من الاكتفاء بملاحقته.</div>
+</div>
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.5rem">
+<div>&lt;icon name=“check-circle” size=“lg”/&gt;
+<strong>يوظف التقنية لخدمة الرؤية</strong>، لا لمجرد إظهار قدرات الكاميرا.</div>
+</div>
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.5rem">
+<div>&lt;icon name=“check-circle” size=“lg”/&gt;
+<strong>يصوغ الضوء والتكوين</strong> ليصنع إحساساً واضحاً لدى المشاهد.</div>
+</div>
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.5rem">
+<div>&lt;icon name=“check-circle” size=“lg”/&gt;
+<strong>ينتقي الصور بعناية</strong>، ويعرف متى تكون الصورة البسيطة أقوى من الصورة المعقدة.</div>
+</div>
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.5rem">
+<div>&lt;icon name=“check-circle” size=“lg”/&gt;
+<strong>يحترم الطائر وبيئته</strong>، ولا يجعل الحصول على اللقطة أهم من سلامته.</div>
+</div>
+</div>
+<div>والأهم: لا تجعل كل صورة نسخة من صورة ناجحة رأيتها من قبل. ادرس الصور الممتازة لتفهم أسباب نجاحها، ثم ابحث عن الضوء واللحظة والتكوين الذي يعكس رؤيتك أنت.</div>
+<div><strong>الخطوة التعليمية التالية التي أنصح بها:</strong> الانتقال إلى <em>تصوير الطيور من وجهة نظر لجنة التحكيم الدولية</em>، حيث نحلل الصورة من حيث الأصالة، والتكوين، واللحظة الحاسمة، والتأثير البصري، ونناقش لماذا قد تتفوق صورة أقل حدة قليلاً على صورة مثالية تقنياً.</div>
+<div class="message-time">10/27/2026, 1:33:02 PM</div></div></div><div class="message right"><div class="message-avatar">U</div><div class="message-content"><div>أعطني المزيد عن تصوير الطيور
+من وجهة نظر لجنة التحكيم  الدولية
+مع الأمثلة</div>
+<div class="message-time">10/27/2026, 1:35:20 PM</div></div></div><div class="message left"><div class="message-avatar">AI</div><div class="message-content"><h1>تصوير الطيور من وجهة نظر لجنة التحكيم الدولية</h1>
+<h2>كيف تنتقل من صورة جميلة إلى صورة تنافس على جائزة؟</h2>
+<div>&lt;AsyncImageGroup query={[“award winning bird photography dramatic action bird catching fish wildlife photograph”,“fine art bird photography minimalist lone bird negative space”,“wildlife bird photography storytelling parent feeding chicks nest natural habitat”]} layout=“bento” aspectRatio=“5:4” numPerQuery={1} /&gt;</div>
+<div>عندما تنظر لجنة تحكيم دولية إلى صورة طائر، فهي لا تسأل فقط: <em>هل الطائر حادّ التفاصيل؟ وهل الألوان جميلة؟</em> بل تحاول الإجابة عن سؤال أعمق:</div>
+<div><strong>هل قدّم المصوّر رؤية بصرية مميزة، ولحظة ذات معنى، وصورة متماسكة فنيًا، مع احترام الحقيقة الطبيعية وسلامة الطائر؟</strong></div>
+<div>تختلف الأوزان بين المسابقات؛ فبعضها يركّز على الجودة التقنية والأصالة والقيمة الفنية، بينما تمنح مسابقات أخرى أهمية خاصة للسرد البصري والأصالة والأخلاقيات. وتوضح إرشادات &lt;Entity value=“FIAP” category=“organization” disambig=“الاتحاد الدولي لفن التصوير الفوتوغرافي”/&gt; و&lt;Entity value=“Wildlife Photographer of the Year” category=“event” disambig=“مسابقة التصوير العالمية للحياة البرية”/&gt; أن صورة الطبيعة ليست مجرد استعراض لجمال الكائن، بل يجب أن تحافظ أيضًا على صدق المشهد. &lt;Cite refs={[“turn532369search12”,“turn532369search3”,“turn532369search13”]}/&gt;</div>
+<div>سنتعامل مع الموضوع كما لو أنك تعرض صورك أمام لجنة دولية، ونحلل ما قد يرفع تقييم الصورة أو يخفضه، مع أمثلة عملية.</div>
+<h2>1. المحور الأول: الأصالة — Originality</h2>
+<div>&lt;AsyncImageGroup query={[“creative unusual bird photography reflection bird water symmetrical composition”,“minimalist bird photography tiny bird vast fog negative space”,“creative bird photography bird shadow on wall unusual viewpoint”]} aspectRatio=“5:4” layout=“carousel” /&gt;</div>
+<div>الأصالة لا تعني بالضرورة تصوير نوع نادر من الطيور؛ بل قد تعني أن تصوّر طائرًا مألوفًا بطريقة غير مألوفة.</div>
+<div>تخيّل أن اللجنة شاهدت مئات الصور للرفراف وهو يصطاد السمك. صورة إضافية لطائر جميل على غصن قد تكون ممتازة تقنيًا، لكنها لا تضيف الكثير إلى ما شاهدته اللجنة بالفعل.</div>
+<div>أما الصورة التي تقدّم زاوية جديدة أو علاقة بصرية غير متوقعة، فقد تبقى في الذاكرة.</div>
+<div><strong>مثال تطبيقي: العصفور فوق سطح الماء</strong></div>
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;gap:0.75rem">
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>الصورة A: التسجيل التقليدي</strong></div>
+<div>طائر واضح، إضاءة جيدة، خلفية ناعمة، لكنه يقف في منتصف الإطار بوضعية مألوفة.</div>
+<div>&lt;text color=“secondary” size=“sm”&gt;قراءة اللجنة المحتملة: صورة سليمة، لكن الفكرة البصرية مألوفة.&lt;/text&gt;</div>
+</div>
+</div>
+<div>&lt;divider color=“subtle” /&gt;</div>
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>الصورة B: الرؤية الشخصية</strong></div>
+<div>الطائر صغير في الإطار، وانعكاسه يشكّل عنصرًا بصريًا موازيًا له، بينما يخلق الماء مساحة هادئة حوله.</div>
+<div>&lt;text color=“secondary” size=“sm”&gt;قراءة اللجنة المحتملة: استخدام متعمد للمساحة والانعكاس، مع فرصة أكبر لتميّز الصورة.&lt;/text&gt;</div>
+</div>
+</div>
+</div>
+<div>الفرق ليس أن الصورة الثانية ستفوز حتمًا؛ بل أنها تطرح <strong>قرارًا إبداعيًا يمكن للجنة قراءته وتفسيره</strong>.</div>
+<div>اسأل نفسك قبل التقاط الصورة:</div>
+<ul>
+<li>ما الذي سأقدّمه ولا تقدّمه الصورة التقليدية؟</li>
+<li>هل أستخدم الانعكاس أو الظل أو الفراغ أو الطبقات بطريقة تخدم الفكرة؟</li>
+<li>هل يمكن التعرّف على رؤيتي من الصورة، لا على نوع الطائر فقط؟</li>
+</ul>
+<h2>2. المحور الثاني: القصة — Storytelling</h2>
+<div>&lt;AsyncImageGroup query={[“wild bird parent feeding chick in nest documentary wildlife photography”,“two wild birds competing for food dramatic wildlife photograph”,“bird in rain feathers wet natural wildlife photography storytelling”]} aspectRatio=“5:4” layout=“carousel” /&gt;</div>
+<div>في تصوير الطبيعة، قد تكون القصة أقوى من جمال الريش وحده. وتشدّد إرشادات FIAP/PSA على قيمة القصة الطبيعية، مع ضرورة الحفاظ على مستوى تقني مرتفع. &lt;Cite refs={[“turn532369search12”,“turn532369search9”]}/&gt;</div>
+<div>لا يشترط أن تكون القصة درامية أو نادرة. يكفي أن تحمل الصورة علاقة أو حدثًا أو سؤالًا بصريًا واضحًا.</div>
+<h3>مثال: طائران من النوع نفسه</h3>
+<ul>
+<li><strong>الصورة الأولى:</strong> طائران يقفان جنبًا إلى جنب؛ قد تكون صورة جميلة، لكن العلاقة بينهما غير واضحة.</li>
+<li><strong>الصورة الثانية:</strong> أحدهما يقدّم الطعام للآخر، أو يتبادلان سلوكًا واضحًا؛ هنا أصبحت لدينا علاقة يمكن قراءتها.</li>
+<li><strong>الصورة الثالثة:</strong> يترافق السلوك مع تكوين جيد، وإضاءة تخدم اللحظة، وخلفية خالية من التشويش؛ عندها تتكامل القصة مع الفن.</li>
+</ul>
+<div>لاحظ أن اللجنة لا تحتاج إلى قصة مختلقة أو عنوان يفرض معنى غير موجود في الصورة. الأفضل أن تدعم الصورة تفسيرها بصريًا.</div>
+<div><strong>قاعدة مهمة:</strong> لا تكتفِ بتصوير وجود الطائر؛ حاول توثيق ما يفعله، أو علاقته بمحيطه، أو ما يجعل تلك اللحظة ذات معنى.</div>
+<h2>3. المحور الثالث: اللحظة الحاسمة — The Decisive Moment</h2>
+<div>&lt;AsyncImageGroup query={[“kingfisher diving into water bird photography action frozen splash”,“heron catching fish dramatic bird wildlife photography”,“bird taking off from water wings spread wildlife action photography”]} aspectRatio=“5:4” layout=“carousel” /&gt;</div>
+<div>قد تكون الصورة حادة تمامًا، لكن توقيت التقاطها يجعلها عادية. وقد تكون صورة أخرى أقل كمالًا من الناحية التقنية، لكنها تكشف لحظة لا تتكرر بسهولة.</div>
+<h3>مثال: طائر يصطاد سمكة</h3>
+<div>تخيّل ثلاث صور متتابعة:</div>
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;gap:0.75rem">
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>اللقطة الأولى: قبل الحدث</strong></div>
+<div>الطائر يراقب الماء. قد تكون جميلة، لكنها لا تكشف وحدها نتيجة سلوكه أو لحظة الترقب بوضوح.</div>
+</div>
+</div>
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>اللقطة الثانية: أثناء الحدث</strong></div>
+<div>حركة الجسم واتجاه المنقار ورذاذ الماء تصنع توترًا بصريًا. تصبح الصورة أكثر إثارة إذا كان الحدث مقروءًا والتكوين واضحًا.</div>
+</div>
+</div>
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>اللقطة الثالثة: نتيجة الحدث</strong></div>
+<div>إذا كانت السمكة واضحة، ووضعية الطائر معبّرة، والعناصر متوازنة، فقد تجتمع القصة واللحظة والتكوين في صورة واحدة.</div>
+</div>
+</div>
+</div>
+<div>لا توجد قاعدة تقول إن لحظة الإمساك بالفريسة تفوز دائمًا؛ فقد تتفوّق صورة الانقضاض أو الترقب إذا كانت أكثر أصالة أو قوة بصرية.</div>
+<div><strong>ما الذي تفحصه اللجنة؟</strong></div>
+<ul>
+<li>هل يمكن فهم الحدث من الصورة دون شرح طويل؟</li>
+<li>هل وضعية الأجنحة والمنقار والرأس تعبّر عن اللحظة؟</li>
+<li>هل توجد مساحة كافية أمام اتجاه الحركة؟</li>
+<li>هل العناصر المهمة واضحة، أم تتداخل مع بعضها؟</li>
+<li>هل الصورة تكشف شيئًا يتجاوز مجرد الحركة السريعة؟</li>
+</ul>
+<h2>4. المحور الرابع: التكوين — Composition</h2>
+<div>&lt;AsyncImageGroup query={[“bird photography rule of thirds bird looking into empty space composition”,“minimalist bird on branch negative space fine art photograph”,“bird flying through frame clean background wildlife photography composition”]} aspectRatio=“5:4” layout=“carousel” /&gt;</div>
+<div>التكوين ليس وضع الطائر في أحد أثلاث الصورة بصورة آلية. إنه تنظيم العلاقة بين الطائر والفراغ والخلفية واتجاه الحركة والنظر.</div>
+<h3>ثلاثة أخطاء تراها اللجنة كثيرًا</h3>
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;gap:0.75rem">
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>الخطأ الأول: خلفية تنافس الطائر</strong></div>
+<div>الأغصان أو الأوراق أو الخطوط الساطعة تجذب العين بعيدًا عن الموضوع الرئيسي.</div>
+<div><strong>الحل:</strong> غيّر ارتفاع التصوير أو موقعك، وانتظر حتى تنفصل هيئة الطائر بصريًا عن الخلفية.</div>
+</div>
+</div>
+<div>&lt;divider color=“subtle” /&gt;</div>
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>الخطأ الثاني: ضيق المساحة أمام النظرة</strong></div>
+<div>عندما ينظر الطائر نحو حافة الإطار، قد يشعر المشاهد بأن الصورة مزدحمة أو غير متوازنة.</div>
+<div><strong>الحل:</strong> اترك مساحة أمام اتجاه النظر، إلا إذا كان التضييق مقصودًا ويخدم إحساسًا بالتوتر أو الحصار.</div>
+</div>
+</div>
+<div>&lt;divider color=“subtle” /&gt;</div>
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>الخطأ الثالث: عدم وضوح نقطة الجذب</strong></div>
+<div>الطائر صغير، والخلفية غنية بالتفاصيل، ولا توجد علاقة بصرية واضحة تقود العين إليه.</div>
+<div><strong>الحل:</strong> إما أن تقترب بصريًا باستخدام العدسة، أو تجعل صغر الطائر جزءًا من فكرة واضحة عن العزلة أو البيئة.</div>
+</div>
+</div>
+</div>
+<h3>مثال متقدم: الطائر الصغير في مساحة كبيرة</h3>
+<div>تخيّل طائرًا صغيرًا على غصن، يشغل 8% فقط من مساحة الصورة، بينما تحيط به ضبابية واسعة.</div>
+<ul>
+<li>إذا كانت المساحة مجرد خلفية فارغة، فقد تبدو الصورة ناقصة.</li>
+<li>إذا كانت المساحة تصنع شعورًا بالعزلة والهدوء، وكانت درجات اللون والاتجاهات البصرية منضبطة، فقد تصبح الصورة عملًا فنيًا متماسكًا.</li>
+</ul>
+<div>اللجنة لا تحكم على حجم الطائر داخل الإطار وحده؛ بل على <strong>سبب اختياره بهذا الحجم</strong>.</div>
+<h2>5. المحور الخامس: الجودة التقنية — Technical Quality</h2>
+<div>&lt;AsyncImageGroup query={[“sharp bird eye feather detail professional wildlife photography”,“bird in flight sharp wings clean exposure wildlife photograph”,“intentional slow shutter bird wings motion blur artistic wildlife photography”]} aspectRatio=“5:4” layout=“carousel” /&gt;</div>
+<div>الجودة التقنية لا تعني دائمًا استخدام أعلى سرعة غالق أو أكبر قدر من الحدة. المهم أن تكون القرارات التقنية ملائمة للفكرة.</div>
+<table>
+<thead>
+<tr>
+<th>العنصر</th>
+<th>ما قد تلاحظه اللجنة</th>
+<th>مثال عملي</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>التركيز</td>
+<td>هل العين أو الجزء الأهم واضح؟</td>
+<td>في صورة البورتريه، يُفضّل عادةً تركيز دقيق على العين الأقرب</td>
+</tr>
+<tr>
+<td>سرعة الغالق</td>
+<td>هل الحركة مجمدة أو ضبابيتها مقصودة؟</td>
+<td>أجنحة مجمدة في لقطة أكشن، أو أثر حركة مدروس في صورة فنية</td>
+</tr>
+<tr>
+<td>التعريض</td>
+<td>هل توجد تفاصيل في المناطق المهمة؟</td>
+<td>الحفاظ على تفاصيل الريش الأبيض وعدم فقدها بسبب الإضاءة الزائدة</td>
+</tr>
+<tr>
+<td>الخلفية</td>
+<td>هل تدعم الموضوع؟</td>
+<td>خلفية هادئة تفصل الرأس والمنقار عن المحيط</td>
+</tr>
+<tr>
+<td>معالجة الصورة</td>
+<td>هل تبدو طبيعية ومتوازنة؟</td>
+<td>تجنب المبالغة في الوضوح والتشبع وإزالة الضوضاء</td>
+</tr>
+</tbody>
+</table>
+<h3>هل يمكن أن تفوز صورة غير حادة تمامًا؟</h3>
+<div>نعم، في بعض السياقات، إذا كان فقدان الحدة مقصودًا ويعبّر عن الحركة. وتذكر إرشادات جوائز Audubon أن الصورة قد تعتمد على الحدة الدقيقة أو على عدم التركيز المقصود لإظهار الحركة، مع أهمية الإضاءة والتكوين والأصالة. &lt;Cite refs={[“turn532369search1”,“turn532369search0”]}/&gt;</div>
+<div>لكن هناك فرقًا مهمًا:</div>
+<ul>
+<li><strong>ضبابية مقصودة:</strong> توجّه العين وتخدم الفكرة.</li>
+<li><strong>ضبابية غير مقصودة:</strong> تجعل الحدث أو الموضوع الأساسي صعب القراءة.</li>
+</ul>
+<div>لا تستخدم سرعة غالق بطيئة لمجرد أن النتيجة تبدو فنية؛ استخدمها عندما تضيف معنى بصريًا.</div>
+<h2>6. المحور السادس: الضوء — Light as a Storytelling Tool</h2>
+<div>&lt;AsyncImageGroup query={[“golden backlight bird feathers rim light wildlife photography”,“bird silhouette sunrise minimalist fine art photography”,“soft overcast light detailed bird portrait wildlife photography”]} aspectRatio=“5:4” layout=“carousel” /&gt;</div>
+<div>قد يكون الطائر نفسه موضوعًا لعشرات الصور، لكن الضوء قادر على تغيير شخصية الصورة بالكامل.</div>
+<h3>مثال: البلشون عند الشروق</h3>
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;gap:0.5rem">
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>ضوء قاسٍ</strong></div>
+<div>قد ينتج ظلالًا قوية على الريش ويجعل التباين بين المناطق المضيئة والداكنة صعب المعالجة.</div>
+</div>
+</div>
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>ضوء جانبي ناعم</strong></div>
+<div>يكشف ملمس الريش ويمنح الجسم حجمًا بصريًا، خصوصًا إذا لم تحترق التفاصيل الفاتحة.</div>
+</div>
+</div>
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>إضاءة خلفية وظلية</strong></div>
+<div>قد تختزل التفاصيل لصالح الشكل والإحساس، بشرط أن تكون الهيئة واضحة ومقصودة.</div>
+</div>
+</div>
+</div>
+<div>لا تسأل فقط: «هل الضوء جميل؟» بل اسأل: <strong>ما الدور الذي يؤديه الضوء في الصورة؟</strong></div>
+<div>هل يكشف التفاصيل؟ هل يعزل الطائر؟ هل يخلق توترًا؟ هل يجعل المشهد هادئًا؟ وهل يخدم القصة أم يشتت عنها؟</div>
+<h2>7. المحور السابع: الصدق والأخلاقيات — Ethics and Authenticity</h2>
+<div>هذا المحور ليس تفصيلًا ثانويًا، بل قد يكون شرطًا أساسيًا لقبول الصورة في المسابقة.</div>
+<div>وفق دليل FIAP/PSA المحدّث في نوفمبر 2025، هناك قواعد خاصة بتمثيل الطبيعة بصدق، وبالتعامل مع الطيور وبيئاتها. كما تحظر بعض المسابقات استدراج الطيور بالطعام أو الأصوات، أو تصويرها بطريقة تسبب لها الضغط. وتختلف التفاصيل باختلاف المسابقة وفئتها؛ لذلك يجب قراءة قواعد المسابقة المحددة قبل التقديم. &lt;Cite refs={[“turn694702view0”,“turn532369search0”,“turn694702view1”]}/&gt;</div>
+<h3>أمثلة على قرارات قد تؤثر في أهلية الصورة</h3>
+<ul>
+<li>صورة لطائر بري يلتقط طعامه في سلوكه الطبيعي، دون تدخل من المصوّر.</li>
+<li>صورة لطائر جرى استدراجه بالطعام أو بتسجيل أصوات لجعله يقترب؛ قد تخالف قواعد المسابقة.</li>
+<li>صورة عند العش التُقطت بطريقة تسبّب إزعاجًا للطيور؛ قد تكون غير مقبولة حتى لو كانت جذابة بصريًا.</li>
+<li>صورة عُدّلت رقميًا بحيث تغيّرت حقيقة الحدث أو أضيفت عناصر غير موجودة؛ قد تُرفض في فئات تشترط الأصالة الطبيعية.</li>
+</ul>
+<div><strong>القاعدة الذهبية:</strong> رفاه الطائر وصدق الصورة أهم من الحصول على اللقطة. لا تقترب من العش أو تغيّر سلوك الطائر للحصول على صورة أكثر إثارة.</div>
+<h2>8. المحور الثامن: المعالجة الفنية — Fine Art Processing</h2>
+<div>&lt;AsyncImageGroup query={[“fine art bird photography muted tones elegant composition bird in mist”,“black and white bird photography graphic silhouette branches”,“fine art wildlife bird photograph painterly natural tones”]} aspectRatio=“5:4” layout=“carousel” /&gt;</div>
+<div>المعالجة القوية لا تعني أن تجعل الصورة أكثر تشبعًا أو تباينًا في كل مرة. بل أن تجعل المعالجة تخدم الفكرة، مع الالتزام بقواعد الفئة التي تنوي المشاركة فيها.</div>
+<h3>ثلاثة اتجاهات ممكنة</h3>
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;gap:0.75rem">
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>أ. الواقعية الطبيعية</strong></div>
+<div>إبراز تفاصيل الريش، وضبط توازن اللون الأبيض، وتحسين التباين بدرجة معتدلة.</div>
+<div>مناسبة عندما تكون القصة أو السلوك الطبيعي محور الصورة.</div>
+</div>
+</div>
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>ب. الأسلوب الفني الهادئ</strong></div>
+<div>درجات لونية منسجمة، ومساحة سالبة، وتباين أقل عندما يخدم الإحساس المقصود.</div>
+<div>مناسبة للصورة التي تتحدث عن الهدوء أو العزلة أو التأمل.</div>
+</div>
+</div>
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>ج. التبسيط الأحادي اللون</strong></div>
+<div>الاعتماد على الشكل والخطوط والكتل بدل اللون.</div>
+<div>قد ينجح عندما تكون بنية الصورة أقوى من ألوانها، إذا كانت الفئة وقواعدها تسمحان بذلك.</div>
+</div>
+</div>
+</div>
+<h3>اختبار المعالجة أمام اللجنة</h3>
+<div>قبل تصدير الصورة، اسأل:</div>
+<ol>
+<li>هل ما زالت تفاصيل الريش المهمة موجودة؟</li>
+<li>هل أصبحت العين أول نقطة تجذب النظر؟</li>
+<li>هل الألوان تخدم الموضوع أم أصبحت أكثر لفتًا من الطائر نفسه؟</li>
+<li>هل أزلت أو أضفت عناصر بما يخالف قواعد المسابقة؟</li>
+<li>هل ستبدو الصورة مقنعة عند عرضها بحجم كبير؟</li>
+</ol>
+<div>ولا تفترض أن قواعد المعالجة واحدة في جميع المسابقات؛ فالفئة الطبيعية التوثيقية قد تفرض قيودًا مختلفة عن فئة فنية مفتوحة.</div>
+<h2>9. كيف يمكن أن تقيّم اللجنة ثلاث صور افتراضية؟</h2>
+<div>هذا تمرين تدريبي، وليس نظام درجات رسميًا لأي مسابقة. الدرجات التالية تقديرية لتوضيح طريقة التفكير فقط.</div>
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;gap:0.75rem">
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>الصورة A — البورتريه المثالي</strong></div>
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:center">
+<div>&lt;text color=“secondary” size=“sm”&gt;التقنية&lt;/text&gt;
+&lt;text weight=“medium”&gt;9/10&lt;/text&gt;</div>
+</div>
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:center">
+<div>&lt;text color=“secondary” size=“sm”&gt;الأصالة&lt;/text&gt;
+&lt;text weight=“medium”&gt;4/10&lt;/text&gt;</div>
+</div>
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:center">
+<div>&lt;text color=“secondary” size=“sm”&gt;القصة&lt;/text&gt;
+&lt;text weight=“medium”&gt;3/10&lt;/text&gt;</div>
+</div>
+<div>&lt;text color=“secondary” size=“sm”&gt;تعليق المحكّم: صورة متقنة وجذابة، لكن فكرتها مألوفة ولا تحمل حدثًا أو معالجة بصرية تميزها عن صور كثيرة مشابهة.&lt;/text&gt;</div>
+</div>
+</div>
+<div>&lt;divider color=“subtle” /&gt;</div>
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>الصورة B — لحظة الصيد</strong></div>
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:center">
+<div>&lt;text color=“secondary” size=“sm”&gt;التقنية&lt;/text&gt;
+&lt;text weight=“medium”&gt;8/10&lt;/text&gt;</div>
+</div>
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:center">
+<div>&lt;text color=“secondary” size=“sm”&gt;الأصالة&lt;/text&gt;
+&lt;text weight=“medium”&gt;7/10&lt;/text&gt;</div>
+</div>
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:center">
+<div>&lt;text color=“secondary” size=“sm”&gt;القصة&lt;/text&gt;
+&lt;text weight=“medium”&gt;9/10&lt;/text&gt;</div>
+</div>
+<div>&lt;text color=“secondary” size=“sm”&gt;تعليق المحكّم: حدث قوي يمكن قراءته فورًا. ربما كان التكوين أفضل لو ترك المصوّر مساحة أكبر أمام حركة الطائر.&lt;/text&gt;</div>
+</div>
+</div>
+<div>&lt;divider color=“subtle” /&gt;</div>
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>الصورة C — العزلة</strong></div>
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:center">
+<div>&lt;text color=“secondary” size=“sm”&gt;التقنية&lt;/text&gt;
+&lt;text weight=“medium”&gt;7/10&lt;/text&gt;</div>
+</div>
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:center">
+<div>&lt;text color=“secondary” size=“sm”&gt;الأصالة&lt;/text&gt;
+&lt;text weight=“medium”&gt;8/10&lt;/text&gt;</div>
+</div>
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:center">
+<div>&lt;text color=“secondary” size=“sm”&gt;القصة&lt;/text&gt;
+&lt;text weight=“medium”&gt;7/10&lt;/text&gt;</div>
+</div>
+<div>&lt;text color=“secondary” size=“sm”&gt;تعليق المحكّم: صورة هادئة ذات شخصية واضحة، لكن نجاحها يعتمد على دقة التوازن بين الطائر والفراغ، وعلى مدى تميزها عن الأعمال المشابهة.&lt;/text&gt;</div>
+</div>
+</div>
+</div>
+<div><strong>ماذا نتعلم؟</strong> لا توجد صورة واحدة تتفوق في كل شيء. الصورة الأولى قوية تقنيًا، والثانية سردية، والثالثة فنية. وقد تتغير النتيجة النهائية بحسب الفئة ومعايير المسابقة وذائقة اللجنة.</div>
+<h2>10. محاكاة جلسة تحكيم دولية</h2>
+<div>تخيّل أن اللجنة تعرض صورتك على الشاشة لمدة قصيرة، ثم تنتقل إلى الصورة التالية. ستحتاج إلى أن تعمل الصورة بسرعة، دون أن تفقد عمقها عند التأمل.</div>
+<div>اسأل نفسك الأسئلة الآتية، كما لو كنت أحد المحكّمين:</div>
+<div>{@body const judgeQuestions = [
+{q:“هل تجذب الصورة انتباهي من النظرة الأولى؟”,help:“هل توجد نقطة جذب واضحة، أم تتنافس عدة عناصر على الانتباه؟”},
+{q:“هل تحمل الصورة فكرة أو لحظة مميزة؟”,help:“هل أرى سلوكًا أو علاقة أو منظورًا بصريًا يتجاوز التسجيل التقليدي؟”},
+{q:“هل التكوين مقصود ومتماسك؟”,help:“افحص الخلفية والفراغ واتجاه النظر وحواف الإطار.”},
+{q:“هل التقنية تخدم الفكرة؟”,help:“هل الحدة والتعريض والحركة متوافقة مع الهدف الفني؟”},
+{q:“هل تبدو الصورة صادقة وأخلاقية؟”,help:“هل السلوك طبيعي، وهل أُنجز التصوير دون إزعاج الطائر، وهل تلتزم المعالجة بالقواعد؟”},
+{q:“هل ستبقى الصورة في ذاكرتي؟”,help:“ما العنصر الذي يجعلها مختلفة عن عشرات الصور المشابهة؟”}
+]}
+{@body const [judgeChecks,setJudgeChecks] = DIL.useState([])}</div>
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;gap:0.75rem">
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:center">
+<div>&lt;title size=“md”&gt;قائمة تقييم ذاتي&lt;/title&gt;
+&lt;badge color={judgeChecks.length===6?“success”:“secondary”}&gt;{judgeChecks.length}/6&lt;/badge&gt;</div>
+</div>
+<div>&lt;text color=“secondary” size=“sm”&gt;تخيّل صورة من تصويرك، ثم ضع علامة أمام كل معيار تحقّق منه فعلًا.&lt;/text&gt;
+{#each judgeQuestions as item,i}
+&lt;checkbox key={item.q} checked={judgeChecks.includes(i)} onChange={v=&gt;setJudgeChecks(old=&gt;v?[…old,i]:old.filter(n=&gt;n!==i))} lineThrough={false}&gt;
+&lt;box gap={1}&gt;
+&lt;text weight=“medium”&gt;{item.q}&lt;/text&gt;
+&lt;text color=“secondary” size=“sm”&gt;{item.help}&lt;/text&gt;
+&lt;/box&gt;
+&lt;/checkbox&gt;
+{/each}
+{#if judgeChecks.length===6}
+&lt;text color=“success” weight=“medium”&gt;اكتمل التقييم الذاتي. أعد النظر في الصورة مرة أخرى بعد فترة، وتحقق من أنك لا تمنحها درجات مرتفعة لمجرد تعلقك باللحظة التي التقطتها.&lt;/text&gt;
+{/if}</div>
+</div>
+<h2>11. خطة عمل قبل إرسال الصورة إلى مسابقة</h2>
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;gap:0.5rem">
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;align-items:center">
+<div>&lt;icon name=“eye” size=“xl” /&gt;</div>
+</div>
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>المرحلة الأولى: اختيار الصورة</strong></div>
+<div>لا تختر الصورة التي استغرقت منك أطول وقت، بل الصورة التي تجمع بين الفكرة والتكوين واللحظة.</div>
+</div>
+</div>
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;align-items:center">
+<div>&lt;icon name=“crop” size=“xl” /&gt;</div>
+</div>
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>المرحلة الثانية: مراجعة الإطار</strong></div>
+<div>افحص الزوايا الأربع، والخلفية، والمساحة أمام الطائر، وأي عنصر ساطع غير ضروري.</div>
+</div>
+</div>
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;align-items:center">
+<div>&lt;icon name=“sliders-horizontal” size=“xl” /&gt;</div>
+</div>
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>المرحلة الثالثة: المعالجة</strong></div>
+<div>صحّح التعريض وتوازن اللون الأبيض والتباين، ثم توقف عندما تبدأ المعالجة في سحب الانتباه بعيدًا عن القصة.</div>
+</div>
+</div>
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;align-items:center">
+<div>&lt;icon name=“file-check” size=“xl” /&gt;</div>
+</div>
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>المرحلة الرابعة: مراجعة شروط المسابقة</strong></div>
+<div>تحقق من الفئة الصحيحة، وحدود المعالجة، ومتطلبات الملف الأصلي، والتعليق التوضيحي، وأي شروط أخلاقية خاصة بالمسابقة. لا تضع اسمك أو علامة مائية إذا كانت قواعد التقديم تشترط التحكيم المجهول. &lt;Cite refs={[“turn694702view1”,“turn532369search4”]}/&gt;</div>
+</div>
+</div>
+</div>
+<h2>12. المراجع الرسمية المقترحة</h2>
+<div>للتعمق في طريقة تقييم صور الطيور والطبيعة، ابدأ بهذه المصادر:</div>
+<ul>
+<li>&lt;Entity value=“FIAP / PSA Nature Guide for Judges and Exhibitors” category=“other” disambig=“دليل تحكيم تصوير الطبيعة والأخلاقيات”/&gt; — <a href="https://www.fiap.net/upload/files/1767040234-673c5.pdf">الدليل الرسمي بصيغة PDF</a>.</li>
+<li>&lt;Entity value=“Wildlife Photographer of the Year” category=“event” disambig=“مسابقة التصوير العالمية للحياة البرية”/&gt; — <a href="https://www.nhm.ac.uk/wildlife-photographer-of-the-year/competition/rules.html">قواعد المسابقة ومعاييرها</a>.</li>
+<li>&lt;Entity value=“Audubon Photography Awards” category=“event” disambig=“مسابقة تصوير الطيور”/&gt; — <a href="https://www.audubon.org/get-outside/audubon-photography-awards-frequently-asked-questions">أسئلة التحكيم وما يبحث عنه المحكّمون</a>.</li>
+</ul>
+<div><strong>الخلاصة:</strong> لا تسعَ فقط إلى صورة تقول: «انظروا كم هذا الطائر جميل». اسعَ إلى صورة تقول: «انظروا إلى ما اكتشفته في هذا الطائر، أو في سلوكه، أو في علاقته بالضوء والمكان». ثم اجعل التقنية والتكوين والمعالجة تخدم تلك الرؤية، مع الحفاظ على صدق المشهد.</div>
+<div class="message-time">10/27/2026, 1:35:23 PM</div></div></div><div class="message right"><div class="message-avatar">U</div><div class="message-content"><div>الخطوة التالية المقترحة: يمكننا الانتقال إلى درس أكثر تخصصاً بعنوان Bird Photography with Canon EOS R7، يشرح إعدادات الكاميرا خطوة بخطوة، واختيار العدسة المناسبة، واستخدام Animal Eye Detection، وتصوير الطيور الساكنة والطيور أثناء الطيران، مع أمثلة تطبيقية على التعريض والتركيز والتكوين.</div>
+<div class="message-time">10/27/2026, 2:22:19 PM</div></div></div><div class="message left"><div class="message-avatar">AI</div><div class="message-content"><h1>Bird Photography with Canon EOS R7</h1>
+<h2>الدليل التطبيقي لتصوير الطيور من الإعدادات الأساسية إلى مستوى المسابقات</h2>
+<div>&lt;AsyncImageGroup query={[“Canon EOS R7 camera with telephoto lens wildlife photography”,“kingfisher bird in flight wildlife photography sharp eye wings spread”,“small bird perched on branch soft natural light wildlife photography”]} layout=“bento” aspectRatio=“5:4” numPerQuery={1} /&gt;</div>
+<div>تتميّز كاميرا <strong>&lt;Entity value=“Canon EOS R7” category=“product” disambig=“كاميرا ميرورليس من كانون بمستشعر APS-C”/&gt;</strong> بمستشعر APS-C بدقة تقارب 32.5 ميغابكسل، وتصوير متتابع سريع، ونظام تركيز تلقائي يتضمن التعرف على الحيوانات. وهذا يجعلها مناسبة لتصوير الطيور الساكنة، والطيور أثناء الطيران، ولحظات الصيد والحركة السريعة.</div>
+<div>سنقسم الدرس إلى إعدادات عملية، مع توضيح متى تستخدم كل إعداد ولماذا، وكيف تراجع الصورة بعين المصوّر وبعين لجنة التحكيم.</div>
+<h2>1. ابدأ باختيار العدسة المناسبة</h2>
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;gap:0.75rem">
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>Canon RF 100–400mm</strong></div>
+<div>خيار عملي للتصوير في الحدائق والرحلات والطيور متوسطة الحجم، مع وزن مناسب نسبيًا للتصوير المحمول باليد.</div>
+<div>&lt;text color=“secondary” size=“sm”&gt;مناسب للطيور الساكنة والطيران في الإضاءة الجيدة.&lt;/text&gt;</div>
+</div>
+</div>
+<div>&lt;divider color=“subtle” /&gt;</div>
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>Canon RF 200–800mm</strong></div>
+<div>مدى طويل مفيد للطيور البعيدة والطيور المائية والطيور الجارحة، خصوصًا عندما لا تستطيع الاقتراب منها.</div>
+<div>&lt;text color=“secondary” size=“sm”&gt;يتطلب ضوءًا كافيًا وسرعة غالق مناسبة، ويحتاج إلى ثبات جيد عند الأطوال البؤرية الطويلة.&lt;/text&gt;</div>
+</div>
+</div>
+<div>&lt;divider color=“subtle” /&gt;</div>
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>Canon RF 600mm F11 IS STM</strong></div>
+<div>عدسة طويلة وخفيفة نسبيًا، مناسبة للطيور البعيدة في ضوء النهار القوي.</div>
+<div>&lt;text color=“secondary” size=“sm”&gt;فتحة f/11 الثابتة تجعلها أقل مرونة في الإضاءة الضعيفة أو عند الحاجة إلى سرعة غالق عالية.&lt;/text&gt;</div>
+</div>
+</div>
+</div>
+<div><strong>ملاحظة مهمة:</strong> عامل القص في مستشعر APS-C يجعل مجال الرؤية يعادل تقريبًا مجال رؤية عدسة أطول بمقدار 1.6× على كاميرا كاملة الإطار؛ مثلًا، عدسة 400mm تعطي مجال رؤية مكافئًا لـ640mm. لكنها لا تتحول فعليًا إلى عدسة 640mm، ولا يزيد ذلك من التفاصيل البصرية التي تستطيع العدسة تسجيلها بذاتها.</div>
+<h2>2. الإعدادات الأساسية للطيور الساكنة</h2>
+<div>عندما يصوّر الطائر وهو واقف على غصن، تكون الأولوية للتركيز على العين، والحفاظ على تفاصيل الريش، واختيار فتحة عدسة تعطي عمق مجال مناسبًا.</div>
+<div>ابدأ بالإعدادات التالية، ثم عدّلها حسب الضوء والعدسة وسلوك الطائر.</div>
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;gap:0.75rem">
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:center">
+<div>&lt;title size=“lg”&gt;وصفة البداية: طائر ساكن&lt;/title&gt;
+&lt;badge color=“success”&gt;إعداد مقترح&lt;/badge&gt;</div>
+</div>
+<div>&lt;grid columns={2} gap={3}&gt;
+&lt;grid-item&gt;
+&lt;box background=“surface-secondary” radius=“lg” padding={3} gap={1}&gt;
+&lt;text color=“secondary” size=“sm”&gt;وضع التصوير&lt;/text&gt;
+&lt;title size=“xl”&gt;Av&lt;/title&gt;
+&lt;text size=“sm”&gt;أولوية فتحة العدسة&lt;/text&gt;
+&lt;/box&gt;
+&lt;/grid-item&gt;
+&lt;grid-item&gt;
+&lt;box background=“surface-secondary” radius=“lg” padding={3} gap={1}&gt;
+&lt;text color=“secondary” size=“sm”&gt;فتحة العدسة&lt;/text&gt;
+&lt;title size=“xl”&gt;f/5.6–f/8&lt;/title&gt;
+&lt;text size=“sm”&gt;بحسب العدسة والعمق المطلوب&lt;/text&gt;
+&lt;/box&gt;
+&lt;/grid-item&gt;
+&lt;grid-item&gt;
+&lt;box background=“surface-secondary” radius=“lg” padding={3} gap={1}&gt;
+&lt;text color=“secondary” size=“sm”&gt;سرعة الغالق&lt;/text&gt;
+&lt;title size=“xl”&gt;1/800 s&lt;/title&gt;
+&lt;text size=“sm”&gt;نقطة بداية عملية&lt;/text&gt;
+&lt;/box&gt;
+&lt;/grid-item&gt;
+&lt;grid-item&gt;
+&lt;box background=“surface-secondary” radius=“lg” padding={3} gap={1}&gt;
+&lt;text color=“secondary” size=“sm”&gt;ISO&lt;/text&gt;
+&lt;title size=“xl”&gt;Auto ISO&lt;/title&gt;
+&lt;text size=“sm”&gt;مع مراقبة مستوى الضوضاء&lt;/text&gt;
+&lt;/box&gt;
+&lt;/grid-item&gt;
+&lt;/grid&gt;
+&lt;text color=“secondary” size=“sm”&gt;هذه ليست قيمًا إلزامية. إذا كان الطائر يتحرك أو كان الضوء ضعيفًا، فقد تحتاج إلى سرعة أعلى أو فتحة أوسع أو ISO أكبر.&lt;/text&gt;</div>
+</div>
+<h3>لماذا نختار هذه الإعدادات؟</h3>
+<ul>
+<li><strong>Av:</strong> تتحكم في فتحة العدسة، وتترك للكاميرا حساب التعريض وفق إعدادات القياس.</li>
+<li><strong>f/5.6–f/8:</strong> تساعد على فصل الطائر عن الخلفية مع توفير قدر مناسب من وضوح الرأس والريش. مع طائر جانبي طويل أو طائرين في مستويات مختلفة، قد تحتاج إلى f/8 أو f/11.</li>
+<li><strong>1/800 ثانية:</strong> تقلل أثر حركة الطائر واهتزاز الكاميرا، لكنها قد لا تكفي لطائر سريع الحركة.</li>
+<li><strong>Auto ISO:</strong> يسمح للكاميرا برفع الحساسية عندما يتغير الضوء، مع ضرورة مراقبة جودة الصورة.</li>
+</ul>
+<div>إذا كنت تستخدم عدسة RF 100–400mm، فتذكّر أن أقصى فتحة عند 400mm هي f/8، لذا قد تحتاج إلى رفع ISO في الظل. &lt;Cite refs={[“turn692480search5”,“turn692480search7”]}/&gt;</div>
+<h2>3. إعداد Animal Eye Detection خطوة بخطوة</h2>
+<div>من أهم مزايا EOS R7 قدرتها على التعرف على الحيوانات والطيور ومحاولة تتبع العين عندما تكون قابلة للكشف. لكن اكتشاف العين ليس مضمونًا في كل الظروف، خصوصًا عندما يكون الطائر صغيرًا جدًا في الإطار أو تحجبه الأغصان. &lt;Cite refs={[“turn692480search3”,“turn692480search4”]}/&gt;</div>
+<h3>طريقة الإعداد</h3>
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;gap:0.75rem">
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;align-items:center">
+<div>&lt;title size=“lg”&gt;1&lt;/title&gt;</div>
+</div>
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>اختر Servo AF</strong></div>
+<div>من قائمة AF Operation، اختر Servo AF عند تصوير الطيور التي تتحرك أو عندما تريد أن يستمر التركيز في تعديل المسافة أثناء التصوير المتتابع.</div>
+</div>
+</div>
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;align-items:center">
+<div>&lt;title size=“lg”&gt;2&lt;/title&gt;</div>
+</div>
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>حدّد الحيوانات كموضوع للتعرّف</strong></div>
+<div>من قائمة AF، ابحث عن Subject to detect، ثم اختر Animals. قد تختلف طريقة عرض القوائم قليلًا بحسب إعدادات الكاميرا واللغة.</div>
+</div>
+</div>
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;align-items:center">
+<div>&lt;title size=“lg”&gt;3&lt;/title&gt;</div>
+</div>
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>فعّل Eye Detection</strong></div>
+<div>اختر Enable، ثم وجّه الكاميرا نحو الطائر. إذا تعرّفت الكاميرا على العين، يظهر إطار التركيز حولها.</div>
+</div>
+</div>
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;align-items:center">
+<div>&lt;title size=“lg”&gt;4&lt;/title&gt;</div>
+</div>
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>اختر مساحة التركيز المناسبة</strong></div>
+<div>Whole Area AF مفيد عندما تريد أن تبحث الكاميرا عن الطائر في مساحة واسعة. أما Zone AF أو منطقة أصغر فقد يساعدان عندما توجد أغصان كثيرة أو طيور أخرى في المشهد.</div>
+</div>
+</div>
+</div>
+<div>يمكن مراجعة هذه الخيارات في <a href="https://cam.start.canon/en/C005/manual/html/UG-05_AF-Drive_0020.html">دليل Canon الرسمي لكاميرا EOS R7</a>.</div>
+<h3>متى تفشل الكاميرا في اكتشاف العين؟</h3>
+<ul>
+<li>عندما يكون الطائر صغيرًا جدًا في الإطار.</li>
+<li>عندما تكون العين محجوبة أو بعيدة عن زاوية الرؤية.</li>
+<li>عندما تتداخل الأغصان مع رأس الطائر.</li>
+<li>عندما تكون الإضاءة ضعيفة أو حركة الطائر سريعة.</li>
+</ul>
+<div><strong>الحل العملي:</strong> لا تعتمد على إطار التتبع وحده. راجع الصورة عند تكبير العين، وتأكد من أن التركيز وقع على الجزء المهم فعلًا.</div>
+<h2>4. تصوير الطيور أثناء الطيران</h2>
+<div>تصوير الطيران أصعب من تصوير الطائر الساكن؛ لأنك تتعامل مع حركة الطائر وحركة الكاميرا وتغير المسافة والاتجاه في وقت واحد.</div>
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;gap:0.75rem">
+<div>&lt;title size=“lg”&gt;وصفة البداية: طائر في الطيران&lt;/title&gt;
+&lt;grid columns={2} gap={3}&gt;
+&lt;grid-item&gt;
+&lt;box background=“surface-secondary” radius=“lg” padding={3} gap={1}&gt;
+&lt;text color=“secondary” size=“sm”&gt;وضع التصوير&lt;/text&gt;
+&lt;title size=“xl”&gt;M + Auto ISO&lt;/title&gt;
+&lt;text size=“sm”&gt;تحكم في الغالق والفتحة&lt;/text&gt;
+&lt;/box&gt;
+&lt;/grid-item&gt;
+&lt;grid-item&gt;
+&lt;box background=“surface-secondary” radius=“lg” padding={3} gap={1}&gt;
+&lt;text color=“secondary” size=“sm”&gt;سرعة الغالق&lt;/text&gt;
+&lt;title size=“xl”&gt;1/2500 s&lt;/title&gt;
+&lt;text size=“sm”&gt;بداية جيدة لتجميد الحركة&lt;/text&gt;
+&lt;/box&gt;
+&lt;/grid-item&gt;
+&lt;grid-item&gt;
+&lt;box background=“surface-secondary” radius=“lg” padding={3} gap={1}&gt;
+&lt;text color=“secondary” size=“sm”&gt;فتحة العدسة&lt;/text&gt;
+&lt;title size=“xl”&gt;أوسع فتحة&lt;/title&gt;
+&lt;text size=“sm”&gt;مثل f/5.6 أو f/8 حسب العدسة&lt;/text&gt;
+&lt;/box&gt;
+&lt;/grid-item&gt;
+&lt;grid-item&gt;
+&lt;box background=“surface-secondary” radius=“lg” padding={3} gap={1}&gt;
+&lt;text color=“secondary” size=“sm”&gt;التركيز&lt;/text&gt;
+&lt;title size=“xl”&gt;Servo AF&lt;/title&gt;
+&lt;text size=“sm”&gt;مع تتبع الطائر&lt;/text&gt;
+&lt;/box&gt;
+&lt;/grid-item&gt;
+&lt;/grid&gt;</div>
+</div>
+<h3>كيف تختار سرعة الغالق؟</h3>
+<table>
+<thead>
+<tr>
+<th>نوع اللقطة</th>
+<th style="text-align:right">سرعة بداية مقترحة</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>طائر كبير يتحرك ببطء</td>
+<td style="text-align:right">1/1000–1/1600 ثانية</td>
+</tr>
+<tr>
+<td>طائر يطير بسرعة معتدلة</td>
+<td style="text-align:right">1/2000–1/2500 ثانية</td>
+</tr>
+<tr>
+<td>طائر صغير سريع أو أجنحة سريعة</td>
+<td style="text-align:right">1/3200–1/4000 ثانية</td>
+</tr>
+<tr>
+<td>إظهار حركة الأجنحة بصورة فنية</td>
+<td style="text-align:right">سرعة أبطأ، مع تجارب متعددة</td>
+</tr>
+</tbody>
+</table>
+<div>هذه نطاقات تجريبية وليست قوانين ثابتة؛ فسرعة الطائر واتجاهه والمسافة عنه تؤثر جميعها في النتيجة.</div>
+<h3>تمرين عملي</h3>
+<div>ابدأ بطائر كبير يطير في سماء صافية:</div>
+<ol>
+<li>اختر Servo AF وAnimal Detection.</li>
+<li>استخدم منطقة تركيز واسعة لتسهيل التقاط الطائر.</li>
+<li>ابدأ بسرعة 1/2500 ثانية.</li>
+<li>حرّك الكاميرا بسلاسة مع اتجاه الطائر، مع إبقاء الطائر داخل الإطار.</li>
+<li>التقط سلسلة قصيرة من الصور بدل الاعتماد على لقطة واحدة.</li>
+<li>راجع العين، وحواف الأجنحة، ومساحة الحركة أمام الطائر.</li>
+</ol>
+<div>كاميرا EOS R7 تدعم التصوير المتتابع حتى نحو 15 إطارًا في الثانية مع الغالق الميكانيكي أو الستارة الإلكترونية الأولى، وحتى نحو 30 إطارًا في الثانية بالغالق الإلكتروني في الأوضاع المدعومة. لكن السرعة الأعلى لا تضمن صورة أفضل؛ فقد تتأثر النتائج بتوقيت اللقطة وسعة التخزين وتشوه الحركة الناتج عن قراءة المستشعر. &lt;Cite refs={[“turn692480search1”,“turn692480search8”]}/&gt;</div>
+<div><strong>متى أستخدم الغالق الإلكتروني؟</strong> قد يكون مناسبًا للطيور الساكنة أو عند الحاجة إلى التصوير الصامت. أما عند حركة الأجنحة السريعة أو الحركة الجانبية القوية، فاختبر الغالق الميكانيكي أو الستارة الإلكترونية الأولى لتقليل احتمال ظهور تشوهات الحركة.</div>
+<h2>5. التعريض: لماذا يظهر الطائر أسود أو أبيض أكثر من اللازم؟</h2>
+<div>&lt;AsyncImageGroup query={[“dark bird against bright sky wildlife photography silhouette exposure”,“white egret detailed white feathers natural light wildlife photograph”]} aspectRatio=“5:4” layout=“carousel” /&gt;</div>
+<div>من أكثر التحديات شيوعًا أن الطائر داكن والخلفية ساطعة، أو أن الطائر أبيض وتفاصيل ريشه معرضة للاحتراق.</div>
+<h3>الحالة الأولى: طائر داكن أمام السماء</h3>
+<div>قد تحاول الكاميرا الموازنة بين الطائر والسماء، فتظهر هيئة الطائر أغمق مما تريد.</div>
+<ul>
+<li>افحص Histogram وتنبيه المناطق المحترقة إن كانا مفعّلين.</li>
+<li>جرّب تعويض التعريض بقيمة موجبة صغيرة مثل +1/3 EV.</li>
+<li>راجع السماء أيضًا؛ لا ترفع التعريض إلى درجة تفقد معها تفاصيلها المهمة.</li>
+</ul>
+<h3>الحالة الثانية: طائر أبيض في ضوء قوي</h3>
+<div>هنا قد يؤدي رفع التعريض إلى فقد تفاصيل الريش.</div>
+<ul>
+<li>ابدأ بتعريض محافظ.</li>
+<li>راقب المناطق البيضاء الساطعة.</li>
+<li>جرّب تعويضًا سالبًا بسيطًا مثل −1/3 EV إذا بدأت التفاصيل بالاختفاء.</li>
+<li>التقط RAW لتمنح نفسك مرونة أكبر في المعالجة، مع العلم أن التفاصيل المحترقة بالكامل قد لا يمكن استعادتها.</li>
+</ul>
+<div>هذه القيم مجرد نقطة بداية؛ القرار الصحيح يعتمد على المشهد وقياس التعريض.</div>
+<h2>6. التكوين الذي يرفع قيمة الصورة</h2>
+<div>&lt;AsyncImageGroup query={[“bird in flight with open space in front composition wildlife photography”,“small bird perched in reeds environmental bird photography habitat”,“minimalist bird perched on isolated branch negative space photography”]} aspectRatio=“5:4” layout=“carousel” /&gt;</div>
+<div>حتى مع التركيز المثالي، قد تضعف الصورة إذا كان الطائر ملتصقًا بحافة الإطار أو كانت الخلفية مزدحمة.</div>
+<div>جرّب هذه الأنماط:</div>
+<ul>
+<li><strong>الطائر المتجه إلى اليمين:</strong> اترك مساحة أمامه إذا كان اتجاه الحركة مهمًا.</li>
+<li><strong>الطائر في بيئته:</strong> أظهر جزءًا من المكان عندما يضيف معنى للقصة، بدل الاقتصاص الشديد دائمًا.</li>
+<li><strong>الطائر المعزول:</strong> استخدم الخلفية الهادئة والفراغ عندما تريد صورة فنية بسيطة.</li>
+<li><strong>الطائران معًا:</strong> انتبه إلى العلاقة بينهما، واتجاه النظر، وتداخل الأجسام.</li>
+</ul>
+<div>من منظور التحكيم، اسأل: هل أضفت البيئة معلومة أو إحساسًا؟ أم أنها مجرد عناصر مشتتة؟ وهل يمكن قراءة الصورة بسرعة، ثم اكتشاف تفاصيل إضافية عند التأمل؟</div>
+<h2>7. أنشئ إعدادين جاهزين في الكاميرا</h2>
+<div>إذا كنت تنتقل باستمرار بين الطيور الساكنة والطيران، فجهّز إعدادين قابلين للاستدعاء السريع عبر أوضاع التصوير المخصصة C1/C2، إذا كانت إعداداتك تسمح بذلك.</div>
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;gap:0.75rem">
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;align-items:center">
+<div>&lt;icon name=“bird” size=“xl” /&gt;</div>
+</div>
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>C1 — الطيور الساكنة</strong></div>
+<ul>
+<li>Av</li>
+<li>f/5.6–f/8 حسب العدسة</li>
+<li>Auto ISO</li>
+<li>حد أدنى مستهدف للغالق نحو 1/800 ثانية، إذا كانت وظيفة ISO Auto تسمح بضبط ذلك في وضع Av</li>
+<li>Servo AF عند توقع الحركة، أو One-Shot AF لطائر ساكن تمامًا</li>
+<li>RAW</li>
+</ul>
+</div>
+</div>
+<div>&lt;divider color=“subtle” /&gt;</div>
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;align-items:center">
+<div>&lt;icon name=“wind” size=“xl” /&gt;</div>
+</div>
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>C2 — الطيور الطائرة</strong></div>
+<ul>
+<li>M + Auto ISO</li>
+<li>1/2500 ثانية كبداية</li>
+<li>أوسع فتحة عملية متاحة</li>
+<li>Servo AF + Animal Detection + Eye Detection</li>
+<li>تصوير متتابع عالي السرعة</li>
+<li>RAW</li>
+</ul>
+</div>
+</div>
+</div>
+<div>راجع دليل الكاميرا قبل حفظ هذه الأوضاع؛ فبعض إعدادات التركيز والتصوير المتتابع قد تتغير بحسب نمط التشغيل والعدسة.</div>
+<h2>8. التمرين الختامي: ثلاث صور، ثلاثة أهداف</h2>
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;gap:0.75rem">
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>الصورة الأولى: بورتريه طائر</strong></div>
+<div>الهدف: عين حادة، وريش مفصل، وخلفية نظيفة.</div>
+<div>&lt;text color=“secondary” size=“sm”&gt;راجع التركيز والتعريض وفصل الطائر عن الخلفية.&lt;/text&gt;</div>
+</div>
+</div>
+<div>&lt;divider color=“subtle” /&gt;</div>
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>الصورة الثانية: طائر في الطيران</strong></div>
+<div>الهدف: تجميد الحركة وتكوين يترك مجالًا لاتجاه الطيران.</div>
+<div>&lt;text color=“secondary” size=“sm”&gt;راجع حدة العين، وتوقيت وضعية الأجنحة، ومساحة الحركة.&lt;/text&gt;</div>
+</div>
+</div>
+<div>&lt;divider color=“subtle” /&gt;</div>
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>الصورة الثالثة: صورة فنية</strong></div>
+<div>الهدف: استخدام الضوء والفراغ والخلفية لصناعة إحساس بصري.</div>
+<div>&lt;text color=“secondary” size=“sm”&gt;راجع الأصالة، والتوازن، وما إذا كانت الصورة تحمل فكرة تتجاوز التوثيق.&lt;/text&gt;</div>
+</div>
+</div>
+</div>
+<div>بعد التصوير، اختر أفضل صورة من كل مجموعة، لا أكثر الصور حدة فقط. ثم قيّمها من حيث التقنية والتكوين والأصالة واللحظة والصدق الطبيعي.</div>
+<div><strong>الخطوة التالية الأكثر فائدة:</strong> تنفيذ درس عملي بعنوان <em>Canon EOS R7 Autofocus Mastery for Bird Photography</em>، يركز على إعدادات Servo AF، وحالات تتبع التركيز، وAF Area، وحل مشكلة انتقال التركيز إلى الأغصان بدل الطائر، مع تدريبات منفصلة للطيور الساكنة والطائرة.</div>
+<div class="message-time">10/27/2026, 2:22:20 PM</div></div></div><div class="message left"><div class="message-avatar">AI</div><div class="message-content"><h2>2. الإعدادات الأساسية للطيور الساكنة</h2>
+<div>عندما يصوّر الطائر وهو واقف على غصن، تكون الأولوية للتركيز على العين، والحفاظ على تفاصيل الريش، واختيار فتحة عدسة تعطي عمق مجال مناسبًا.</div>
+<div>ابدأ بالإعدادات التالية، ثم عدّلها حسب الضوء والعدسة وسلوك الطائر.</div>
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;gap:0.75rem">
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:center">
+<div>&lt;title size=“lg”&gt;وصفة البداية: طائر ساكن&lt;/title&gt;
+&lt;badge color=“success”&gt;إعداد مقترح&lt;/badge&gt;</div>
+</div>
+<div>&lt;grid columns={2} gap={3}&gt;
+&lt;grid-item&gt;
+&lt;box background=“surface-secondary” radius=“lg” padding={3} gap={1}&gt;
+&lt;text color=“secondary” size=“sm”&gt;وضع التصوير&lt;/text&gt;
+&lt;title size=“xl”&gt;Av&lt;/title&gt;
+&lt;text size=“sm”&gt;أولوية فتحة العدسة&lt;/text&gt;
+&lt;/box&gt;
+&lt;/grid-item&gt;
+&lt;grid-item&gt;
+&lt;box background=“surface-secondary” radius=“lg” padding={3} gap={1}&gt;
+&lt;text color=“secondary” size=“sm”&gt;فتحة العدسة&lt;/text&gt;
+&lt;title size=“xl”&gt;f/5.6–f/8&lt;/title&gt;
+&lt;text size=“sm”&gt;بحسب العدسة والعمق المطلوب&lt;/text&gt;
+&lt;/box&gt;
+&lt;/grid-item&gt;
+&lt;grid-item&gt;
+&lt;box background=“surface-secondary” radius=“lg” padding={3} gap={1}&gt;
+&lt;text color=“secondary” size=“sm”&gt;سرعة الغالق&lt;/text&gt;
+&lt;title size=“xl”&gt;1/800 s&lt;/title&gt;
+&lt;text size=“sm”&gt;نقطة بداية عملية&lt;/text&gt;
+&lt;/box&gt;
+&lt;/grid-item&gt;
+&lt;grid-item&gt;
+&lt;box background=“surface-secondary” radius=“lg” padding={3} gap={1}&gt;
+&lt;text color=“secondary” size=“sm”&gt;ISO&lt;/text&gt;
+&lt;title size=“xl”&gt;Auto ISO&lt;/title&gt;
+&lt;text size=“sm”&gt;مع مراقبة مستوى الضوضاء&lt;/text&gt;
+&lt;/box&gt;
+&lt;/grid-item&gt;
+&lt;/grid&gt;
+&lt;text color=“secondary” size=“sm”&gt;هذه ليست قيمًا إلزامية. إذا كان الطائر يتحرك أو كان الضوء ضعيفًا، فقد تحتاج إلى سرعة أعلى أو فتحة أوسع أو ISO أكبر.&lt;/text&gt;</div>
+</div>
+<h3>لماذا نختار هذه الإعدادات؟</h3>
+<ul>
+<li><strong>Av:</strong> تتحكم في فتحة العدسة، وتترك للكاميرا حساب التعريض وفق إعدادات القياس.</li>
+<li><strong>f/5.6–f/8:</strong> تساعد على فصل الطائر عن الخلفية مع توفير قدر مناسب من وضوح الرأس والريش. مع طائر جانبي طويل أو طائرين في مستويات مختلفة، قد تحتاج إلى f/8 أو f/11.</li>
+<li><strong>1/800 ثانية:</strong> تقلل أثر حركة الطائر واهتزاز الكاميرا، لكنها قد لا تكفي لطائر سريع الحركة.</li>
+<li><strong>Auto ISO:</strong> يسمح للكاميرا برفع الحساسية عندما يتغير الضوء، مع ضرورة مراقبة جودة الصورة.</li>
+</ul>
+<div>إذا كنت تستخدم عدسة RF 100–400mm، فتذكّر أن أقصى فتحة عند 400mm هي f/8، لذا قد تحتاج إلى رفع ISO في الظل. &lt;Cite refs={[“turn692480search5”,“turn692480search7”]}/&gt;</div>
+<h2>3. إعداد Animal Eye Detection خطوة بخطوة</h2>
+<div>من أهم مزايا EOS R7 قدرتها على التعرف على الحيوانات والطيور ومحاولة تتبع العين عندما تكون قابلة للكشف. لكن اكتشاف العين ليس مضمونًا في كل الظروف، خصوصًا عندما يكون الطائر صغيرًا جدًا في الإطار أو تحجبه الأغصان. &lt;Cite refs={[“turn692480search3”,“turn692480search4”]}/&gt;</div>
+<h3>طريقة الإعداد</h3>
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;gap:0.75rem">
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;align-items:center">
+<div>&lt;title size=“lg”&gt;1&lt;/title&gt;</div>
+</div>
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>اختر Servo AF</strong></div>
+<div>من قائمة AF Operation، اختر Servo AF عند تصوير الطيور التي تتحرك أو عندما تريد أن يستمر التركيز في تعديل المسافة أثناء التصوير المتتابع.</div>
+</div>
+</div>
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;align-items:center">
+<div>&lt;title size=“lg”&gt;2&lt;/title&gt;</div>
+</div>
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>حدّد الحيوانات كموضوع للتعرّف</strong></div>
+<div>من قائمة AF، ابحث عن Subject to detect، ثم اختر Animals. قد تختلف طريقة عرض القوائم قليلًا بحسب إعدادات الكاميرا واللغة.</div>
+</div>
+</div>
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;align-items:center">
+<div>&lt;title size=“lg”&gt;3&lt;/title&gt;</div>
+</div>
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>فعّل Eye Detection</strong></div>
+<div>اختر Enable، ثم وجّه الكاميرا نحو الطائر. إذا تعرّفت الكاميرا على العين، يظهر إطار التركيز حولها.</div>
+</div>
+</div>
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;align-items:center">
+<div>&lt;title size=“lg”&gt;4&lt;/title&gt;</div>
+</div>
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>اختر مساحة التركيز المناسبة</strong></div>
+<div>Whole Area AF مفيد عندما تريد أن تبحث الكاميرا عن الطائر في مساحة واسعة. أما Zone AF أو منطقة أصغر فقد يساعدان عندما توجد أغصان كثيرة أو طيور أخرى في المشهد.</div>
+</div>
+</div>
+</div>
+<div>يمكن مراجعة هذه الخيارات في <a href="https://cam.start.canon/en/C005/manual/html/UG-05_AF-Drive_0020.html">دليل Canon الرسمي لكاميرا EOS R7</a>.</div>
+<h3>متى تفشل الكاميرا في اكتشاف العين؟</h3>
+<ul>
+<li>عندما يكون الطائر صغيرًا جدًا في الإطار.</li>
+<li>عندما تكون العين محجوبة أو بعيدة عن زاوية الرؤية.</li>
+<li>عندما تتداخل الأغصان مع رأس الطائر.</li>
+<li>عندما تكون الإضاءة ضعيفة أو حركة الطائر سريعة.</li>
+</ul>
+<div><strong>الحل العملي:</strong> لا تعتمد على إطار التتبع وحده. راجع الصورة عند تكبير العين، وتأكد من أن التركيز وقع على الجزء المهم فعلًا.</div>
+<h2>4. تصوير الطيور أثناء الطيران</h2>
+<div>تصوير الطيران أصعب من تصوير الطائر الساكن؛ لأنك تتعامل مع حركة الطائر وحركة الكاميرا وتغير المسافة والاتجاه في وقت واحد.</div>
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;gap:0.75rem">
+<div>&lt;title size=“lg”&gt;وصفة البداية: طائر في الطيران&lt;/title&gt;
+&lt;grid columns={2} gap={3}&gt;
+&lt;grid-item&gt;
+&lt;box background=“surface-secondary” radius=“lg” padding={3} gap={1}&gt;
+&lt;text color=“secondary” size=“sm”&gt;وضع التصوير&lt;/text&gt;
+&lt;title size=“xl”&gt;M + Auto ISO&lt;/title&gt;
+&lt;text size=“sm”&gt;تحكم في الغالق والفتحة&lt;/text&gt;
+&lt;/box&gt;
+&lt;/grid-item&gt;
+&lt;grid-item&gt;
+&lt;box background=“surface-secondary” radius=“lg” padding={3} gap={1}&gt;
+&lt;text color=“secondary” size=“sm”&gt;سرعة الغالق&lt;/text&gt;
+&lt;title size=“xl”&gt;1/2500 s&lt;/title&gt;
+&lt;text size=“sm”&gt;بداية جيدة لتجميد الحركة&lt;/text&gt;
+&lt;/box&gt;
+&lt;/grid-item&gt;
+&lt;grid-item&gt;
+&lt;box background=“surface-secondary” radius=“lg” padding={3} gap={1}&gt;
+&lt;text color=“secondary” size=“sm”&gt;فتحة العدسة&lt;/text&gt;
+&lt;title size=“xl”&gt;أوسع فتحة&lt;/title&gt;
+&lt;text size=“sm”&gt;مثل f/5.6 أو f/8 حسب العدسة&lt;/text&gt;
+&lt;/box&gt;
+&lt;/grid-item&gt;
+&lt;grid-item&gt;
+&lt;box background=“surface-secondary” radius=“lg” padding={3} gap={1}&gt;
+&lt;text color=“secondary” size=“sm”&gt;التركيز&lt;/text&gt;
+&lt;title size=“xl”&gt;Servo AF&lt;/title&gt;
+&lt;text size=“sm”&gt;مع تتبع الطائر&lt;/text&gt;
+&lt;/box&gt;
+&lt;/grid-item&gt;
+&lt;/grid&gt;</div>
+</div>
+<h3>كيف تختار سرعة الغالق؟</h3>
+<table>
+<thead>
+<tr>
+<th>نوع اللقطة</th>
+<th style="text-align:right">سرعة بداية مقترحة</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>طائر كبير يتحرك ببطء</td>
+<td style="text-align:right">1/1000–1/1600 ثانية</td>
+</tr>
+<tr>
+<td>طائر يطير بسرعة معتدلة</td>
+<td style="text-align:right">1/2000–1/2500 ثانية</td>
+</tr>
+<tr>
+<td>طائر صغير سريع أو أجنحة سريعة</td>
+<td style="text-align:right">1/3200–1/4000 ثانية</td>
+</tr>
+<tr>
+<td>إظهار حركة الأجنحة بصورة فنية</td>
+<td style="text-align:right">سرعة أبطأ، مع تجارب متعددة</td>
+</tr>
+</tbody>
+</table>
+<div>هذه نطاقات تجريبية وليست قوانين ثابتة؛ فسرعة الطائر واتجاهه والمسافة عنه تؤثر جميعها في النتيجة.</div>
+<h3>تمرين عملي</h3>
+<div>ابدأ بطائر كبير يطير في سماء صافية:</div>
+<ol>
+<li>اختر Servo AF وAnimal Detection.</li>
+<li>استخدم منطقة تركيز واسعة لتسهيل التقاط الطائر.</li>
+<li>ابدأ بسرعة 1/2500 ثانية.</li>
+<li>حرّك الكاميرا بسلاسة مع اتجاه الطائر، مع إبقاء الطائر داخل الإطار.</li>
+<li>التقط سلسلة قصيرة من الصور بدل الاعتماد على لقطة واحدة.</li>
+<li>راجع العين، وحواف الأجنحة، ومساحة الحركة أمام الطائر.</li>
+</ol>
+<div>كاميرا EOS R7 تدعم التصوير المتتابع حتى نحو 15 إطارًا في الثانية مع الغالق الميكانيكي أو الستارة الإلكترونية الأولى، وحتى نحو 30 إطارًا في الثانية بالغالق الإلكتروني في الأوضاع المدعومة. لكن السرعة الأعلى لا تضمن صورة أفضل؛ فقد تتأثر النتائج بتوقيت اللقطة وسعة التخزين وتشوه الحركة الناتج عن قراءة المستشعر. &lt;Cite refs={[“turn692480search1”,“turn692480search8”]}/&gt;</div>
+<div><strong>متى أستخدم الغالق الإلكتروني؟</strong> قد يكون مناسبًا للطيور الساكنة أو عند الحاجة إلى التصوير الصامت. أما عند حركة الأجنحة السريعة أو الحركة الجانبية القوية، فاختبر الغالق الميكانيكي أو الستارة الإلكترونية الأولى لتقليل احتمال ظهور تشوهات الحركة.</div>
+<h2>5. التعريض: لماذا يظهر الطائر أسود أو أبيض أكثر من اللازم؟</h2>
+<div>&lt;AsyncImageGroup query={[“dark bird against bright sky wildlife photography silhouette exposure”,“white egret detailed white feathers natural light wildlife photograph”]} aspectRatio=“5:4” layout=“carousel” /&gt;</div>
+<div>من أكثر التحديات شيوعًا أن الطائر داكن والخلفية ساطعة، أو أن الطائر أبيض وتفاصيل ريشه معرضة للاحتراق.</div>
+<h3>الحالة الأولى: طائر داكن أمام السماء</h3>
+<div>قد تحاول الكاميرا الموازنة بين الطائر والسماء، فتظهر هيئة الطائر أغمق مما تريد.</div>
+<ul>
+<li>افحص Histogram وتنبيه المناطق المحترقة إن كانا مفعّلين.</li>
+<li>جرّب تعويض التعريض بقيمة موجبة صغيرة مثل +1/3 EV.</li>
+<li>راجع السماء أيضًا؛ لا ترفع التعريض إلى درجة تفقد معها تفاصيلها المهمة.</li>
+</ul>
+<h3>الحالة الثانية: طائر أبيض في ضوء قوي</h3>
+<div>هنا قد يؤدي رفع التعريض إلى فقد تفاصيل الريش.</div>
+<ul>
+<li>ابدأ بتعريض محافظ.</li>
+<li>راقب المناطق البيضاء الساطعة.</li>
+<li>جرّب تعويضًا سالبًا بسيطًا مثل −1/3 EV إذا بدأت التفاصيل بالاختفاء.</li>
+<li>التقط RAW لتمنح نفسك مرونة أكبر في المعالجة، مع العلم أن التفاصيل المحترقة بالكامل قد لا يمكن استعادتها.</li>
+</ul>
+<div>هذه القيم مجرد نقطة بداية؛ القرار الصحيح يعتمد على المشهد وقياس التعريض.</div>
+<h2>6. التكوين الذي يرفع قيمة الصورة</h2>
+<div>&lt;AsyncImageGroup query={[“bird in flight with open space in front composition wildlife photography”,“small bird perched in reeds environmental bird photography habitat”,“minimalist bird perched on isolated branch negative space photography”]} aspectRatio=“5:4” layout=“carousel” /&gt;</div>
+<div>حتى مع التركيز المثالي، قد تضعف الصورة إذا كان الطائر ملتصقًا بحافة الإطار أو كانت الخلفية مزدحمة.</div>
+<div>جرّب هذه الأنماط:</div>
+<ul>
+<li><strong>الطائر المتجه إلى اليمين:</strong> اترك مساحة أمامه إذا كان اتجاه الحركة مهمًا.</li>
+<li><strong>الطائر في بيئته:</strong> أظهر جزءًا من المكان عندما يضيف معنى للقصة، بدل الاقتصاص الشديد دائمًا.</li>
+<li><strong>الطائر المعزول:</strong> استخدم الخلفية الهادئة والفراغ عندما تريد صورة فنية بسيطة.</li>
+<li><strong>الطائران معًا:</strong> انتبه إلى العلاقة بينهما، واتجاه النظر، وتداخل الأجسام.</li>
+</ul>
+<div>من منظور التحكيم، اسأل: هل أضفت البيئة معلومة أو إحساسًا؟ أم أنها مجرد عناصر مشتتة؟ وهل يمكن قراءة الصورة بسرعة، ثم اكتشاف تفاصيل إضافية عند التأمل؟</div>
+<h2>7. أنشئ إعدادين جاهزين في الكاميرا</h2>
+<div>إذا كنت تنتقل باستمرار بين الطيور الساكنة والطيران، فجهّز إعدادين قابلين للاستدعاء السريع عبر أوضاع التصوير المخصصة C1/C2، إذا كانت إعداداتك تسمح بذلك.</div>
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;gap:0.75rem">
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;align-items:center">
+<div>&lt;icon name=“bird” size=“xl” /&gt;</div>
+</div>
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>C1 — الطيور الساكنة</strong></div>
+<ul>
+<li>Av</li>
+<li>f/5.6–f/8 حسب العدسة</li>
+<li>Auto ISO</li>
+<li>حد أدنى مستهدف للغالق نحو 1/800 ثانية، إذا كانت وظيفة ISO Auto تسمح بضبط ذلك في وضع Av</li>
+<li>Servo AF عند توقع الحركة، أو One-Shot AF لطائر ساكن تمامًا</li>
+<li>RAW</li>
+</ul>
+</div>
+</div>
+<div>&lt;divider color=“subtle” /&gt;</div>
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;align-items:center">
+<div>&lt;icon name=“wind” size=“xl” /&gt;</div>
+</div>
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>C2 — الطيور الطائرة</strong></div>
+<ul>
+<li>M + Auto ISO</li>
+<li>1/2500 ثانية كبداية</li>
+<li>أوسع فتحة عملية متاحة</li>
+<li>Servo AF + Animal Detection + Eye Detection</li>
+<li>تصوير متتابع عالي السرعة</li>
+<li>RAW</li>
+</ul>
+</div>
+</div>
+</div>
+<div>راجع دليل الكاميرا قبل حفظ هذه الأوضاع؛ فبعض إعدادات التركيز والتصوير المتتابع قد تتغير بحسب نمط التشغيل والعدسة.</div>
+<h2>8. التمرين الختامي: ثلاث صور، ثلاثة أهداف</h2>
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;gap:0.75rem">
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>الصورة الأولى: بورتريه طائر</strong></div>
+<div>الهدف: عين حادة، وريش مفصل، وخلفية نظيفة.</div>
+<div>&lt;text color=“secondary” size=“sm”&gt;راجع التركيز والتعريض وفصل الطائر عن الخلفية.&lt;/text&gt;</div>
+</div>
+</div>
+<div>&lt;divider color=“subtle” /&gt;</div>
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>الصورة الثانية: طائر في الطيران</strong></div>
+<div>الهدف: تجميد الحركة وتكوين يترك مجالًا لاتجاه الطيران.</div>
+<div>&lt;text color=“secondary” size=“sm”&gt;راجع حدة العين، وتوقيت وضعية الأجنحة، ومساحة الحركة.&lt;/text&gt;</div>
+</div>
+</div>
+<div>&lt;divider color=“subtle” /&gt;</div>
+<div class="chatgpt-row" style="display:flex;flex-direction:row;min-width:0;align-items:flex-start;gap:0.75rem">
+<div class="chatgpt-box" style="display:flex;flex-direction:column;min-width:0;flex:1 1 0%;gap:0.25rem">
+<div><strong>الصورة الثالثة: صورة فنية</strong></div>
+<div>الهدف: استخدام الضوء والفراغ والخلفية لصناعة إحساس بصري.</div>
+<div>&lt;text color=“secondary” size=“sm”&gt;راجع الأصالة، والتوازن، وما إذا كانت الصورة تحمل فكرة تتجاوز التوثيق.&lt;/text&gt;</div>
+</div>
+</div>
+</div>
+<div>بعد التصوير، اختر أفضل صورة من كل مجموعة، لا أكثر الصور حدة فقط. ثم قيّمها من حيث التقنية والتكوين والأصالة واللحظة والصدق الطبيعي.</div>
+<div><strong>الخطوة التالية الأكثر فائدة:</strong> تنفيذ درس عملي بعنوان <em>Canon EOS R7 Autofocus Mastery for Bird Photography</em>، يركز على إعدادات Servo AF، وحالات تتبع التركيز، وAF Area، وحل مشكلة انتقال التركيز إلى الأغصان بدل الطائر، مع تدريبات منفصلة للطيور الساكنة والطائرة.</div>
+<div class="message-time">10/27/2026, 2:22:39 PM</div></div></div>
+                <div class="export-info">
+                    <div>Generated by ChatGPT PDF Exporter • Total messages: 11</div>
+                </div>
+            </div>
+        
+                <div id="lightbox" class="lightbox">
+                    <button class="close-btn" onclick="closeLightbox()">&times;</button>
+                    <img id="lightbox-img" src="" alt="Enlarged Image">
+                </div>
+                <script>
+                    function openLightbox(src) {
+                        document.getElementById('lightbox-img').src = src;
+                        document.getElementById('lightbox').classList.add('show');
+                    }
+                    function closeLightbox() {
+                        document.getElementById('lightbox').classList.remove('show');
+                    }
+                    document.getElementById('lightbox').addEventListener('click', function(e) {
+                        if (e.target === this) {
+                            closeLightbox();
+                        }
+                    });
+                    document.querySelectorAll('.message-image').forEach(img => {
+                        img.addEventListener('click', function() {
+                            openLightbox(this.src);
+                        });
+                    });
+                </script>
+            
+                </body>
+                </html>
+            
